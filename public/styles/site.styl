@@ -50,7 +50,7 @@ button
   background-position top
 
 .login-link
-  @extend .h4
+  @extend .h5
   icon-bg('../images/icons/yellow/cabinet.png')
   margin 25px 0 0 40px
 
@@ -68,8 +68,71 @@ button
   @extend .bold
   @extend .text-center
   @extend .text-white
-  margin-top: 200px
+  margin-top: 140px
   letter-spacing 7pt
+
+.contacts-panel
+  @extend .text-center
+  float: right
+  border 5px solid hotyellow
+  margin-right: 50px
+  margin-top: -230px
+  padding 10px 20px
+  width: 260px
+  box-sizing border-box
+
+.contacts-panel__hr
+  width: 100%
+  height: 5px
+  background: hotyellow;
+  margin: 15px 0
+
+.contacts-panel__number
+  position: relative
+  width: 100%
+  overflow: hidden
+
+.contacts-panel__number-placeholder
+  @extend .h3
+  @extend .text-yellow
+
+.contacts-panel__send-number-btn
+  background-image: url("../images/arrow-yellow.png")
+  transform rotate(90deg)
+  width: 27px
+  height: 15px
+  position: absolute
+  right 0
+  top 10px
+  cursor: pointer
+
+.contacts-panel__order-skype
+  @extend .text-white
+  @extend .h5
+  @extend .text-left
+  icon-bg('../images/skype.png')
+
+.contacts-panel__expand-btn
+  background-image: url("../images/arrow-yellow.png")
+  transform rotate(180deg)
+  width: 27px
+  height: 15px
+  cursor: pointer
+  margin: 10px auto 0 auto
+  transition 0.5s ease-in all
+
+.contacts-panel__additional-numbers
+  margin-top: 20px
+  height: 0
+  transition 0.5s ease-in all
+  overflow: hidden
+
+.contacts-panel__additional-numbers.expanded
+  height 65px
+
+.contacts-panel__expand-btn.collapse
+  transform rotate(0deg)
+
 
 //-----SIDEBAR-----
 
@@ -83,7 +146,7 @@ button
   padding-left: 40px
 
 .sidebar__order-btn
-  @extend .h3
+  @extend .h4
   @extend .text-center
   background-color: hotyellow
   border-radius 3px
@@ -94,7 +157,7 @@ button
   margin-top: 30px
 
 .sidenav__item
-  @extend .h3
+  @extend .h4
   margin-top: 15px
 
 for itemname in 'home' 'services' 'how-to-pay' 'for-corps' 'pros' 'auto-classes' 'contacts' {
@@ -107,7 +170,7 @@ for itemname in 'home' 'services' 'how-to-pay' 'for-corps' 'pros' 'auto-classes'
 }
 
 .sidebar__fb
-  @extend .h3
+  @extend .h4
   margin-top: 20px
   icon-bg('../images/facebook.png')
 
@@ -128,10 +191,9 @@ for flagname in 'ru' 'ua' 'gb' {
 }
 
 .copyright
-  @extend .h3
+  @extend .h4
   @extend .text-yellow
   margin-top: 20px
-
 
 .payment-ways
   margin-top: 50px
@@ -141,7 +203,7 @@ for flagname in 'ru' 'ua' 'gb' {
   display: inline-block
 
 .payment-ways__text
-  @extend .h5
+  @extend .h6
   @extend .text-white
   margin-top: 10px
   width: 180px

@@ -5,6 +5,20 @@ block main-content
         a.login-link.yellow-link Кабинет
         .logo
         .header-title ОНЛАЙН ЗАКАЗ
+        .contacts-panel
+            .h1.text-yellow.light 808
+            .h5.text-white с мобильных бесплатно
+            .h3.text-yellow (044) 500-08-08
+            .contacts-panel__hr
+            .h5.text-white Укажите телефон - мы перезвоним
+            .contacts-panel__number
+                .contacts-panel__number-placeholder (___) ___-__-__
+                .contacts-panel__send-number-btn
+            p.contacts-panel__order-skype Заказ через Skype
+            .contacts-panel__additional-numbers(ng-class="{expanded: isExpanded}")
+                .text-yellow.h3 (044) 500-08-08
+                .text-yellow.h3 (044) 500-08-08
+            .contacts-panel__expand-btn(ng-class="{collapse: isExpanded}", ng-click="isExpanded = !isExpanded")
     .sidebar
         button.sidebar__order-btn Заказать такси
         .sidenav

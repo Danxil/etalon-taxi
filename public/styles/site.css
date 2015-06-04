@@ -1,27 +1,30 @@
 .h1 {
-  font-size: 26pt !important;
+  font-size: 55pt !important;
+  line-height: 52pt;
 }
 .h2,
 .header-title {
   font-size: 24pt !important;
 }
 .h3,
+.contacts-panel__number-placeholder {
+  font-size: 18pt !important;
+}
+.h4,
 .sidebar__order-btn,
 .sidenav__item,
 .sidebar__fb,
 .copyright {
   font-size: 14pt !important;
 }
-.h4,
-.login-link {
+.h5,
+.login-link,
+.contacts-panel__order-skype {
   font-size: 13pt !important;
 }
-.h5,
+.h6,
 .payment-ways__text {
   font-size: 12pt !important;
-}
-.h6 {
-  font-size: 11pt !important;
 }
 .semibold {
   font-family: OSSemiBold;
@@ -54,6 +57,7 @@
 }
 .text-white,
 .header-title,
+.contacts-panel__order-skype,
 .payment-ways__text {
   color: #fff !important;
 }
@@ -61,18 +65,21 @@
   color: #000 !important;
 }
 .text-yellow,
+.contacts-panel__number-placeholder,
 .copyright {
   color: #fce504 !important;
 }
 .text-center,
 .header-title,
+.contacts-panel,
 .sidebar__order-btn {
   text-align: center;
 }
 .text-right {
   text-align: right;
 }
-.text-left {
+.text-left,
+.contacts-panel__order-skype {
   text-align: left;
 }
 .underline {
@@ -144,8 +151,66 @@ button {
   top: 70px;
 }
 .header-title {
-  margin-top: 200px;
+  margin-top: 140px;
   letter-spacing: 7pt;
+}
+.contacts-panel {
+  float: right;
+  border: 5px solid #fdd602;
+  margin-right: 50px;
+  margin-top: -230px;
+  padding: 10px 20px;
+  width: 260px;
+  box-sizing: border-box;
+}
+.contacts-panel__hr {
+  width: 100%;
+  height: 5px;
+  background: #fdd602;
+  margin: 15px 0;
+}
+.contacts-panel__number {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.contacts-panel__send-number-btn {
+  background-image: url("../images/arrow-yellow.png");
+  transform: rotate(90deg);
+  width: 27px;
+  height: 15px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  cursor: pointer;
+}
+.contacts-panel__order-skype {
+  background-image: url("../images/skype.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.contacts-panel__expand-btn {
+  background-image: url("../images/arrow-yellow.png");
+  transform: rotate(180deg);
+  width: 27px;
+  height: 15px;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+  transition: 0.5s ease-in all;
+}
+.contacts-panel__additional-numbers {
+  margin-top: 20px;
+  height: 0;
+  transition: 0.5s ease-in all;
+  overflow: hidden;
+}
+.contacts-panel__additional-numbers.expanded {
+  height: 65px;
+}
+.contacts-panel__expand-btn.collapse {
+  transform: rotate(0deg);
 }
 .sidebar {
   background: #000;
