@@ -19,6 +19,18 @@ block main-content
                 .text-yellow.h3 (044) 500-08-08
                 .text-yellow.h3 (044) 500-08-08
             .contacts-panel__expand-btn(ng-class="{collapse: isExpanded}", ng-click="isExpanded = !isExpanded")
+        .auto-class-panel
+            .auto-class-panel__choose Выберите класс авто
+            .auto-class-panel__items
+                .auto-class-panel__item(ng-class="{active: autoClass == 'standard'}", ng-click="autoClass = 'standard'")
+                    img(src="/images/auto-standard.png")
+                    .auto-class-panel__item-title Стандарт
+                .auto-class-panel__item(ng-class="{active: autoClass == 'business'}", ng-click="autoClass = 'business'")
+                    img(src="/images/auto-business.png")
+                    .auto-class-panel__item-title Бизнес
+                .auto-class-panel__item(ng-class="{active: autoClass == 'premium'}", ng-click="autoClass = 'premium'")
+                    img(src="/images/auto-premium.png")
+                    .auto-class-panel__item-title Премиум
     .sidebar
         button.sidebar__order-btn Заказать такси
         .sidenav

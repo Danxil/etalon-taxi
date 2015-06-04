@@ -11,15 +11,19 @@
   font-size: 18pt !important;
 }
 .h4,
+.auto-class-panel__choose,
+.auto-class-panel__item-title,
 .sidebar__order-btn,
 .sidenav__item,
 .sidebar__fb,
-.copyright {
+.copyright,
+.pros__item {
   font-size: 14pt !important;
 }
 .h5,
 .login-link,
-.contacts-panel__order-skype {
+.contacts-panel__order-skype,
+.awards__item {
   font-size: 13pt !important;
 }
 .h6,
@@ -36,6 +40,22 @@
 .light {
   font-family: OSLight;
 }
+.black-link {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+.black-link:hover {
+  color: #000 !important;
+  text-decoration: underline !important;
+}
+.black-link-underline {
+  color: #000 !important;
+  text-decoration: underline !important;
+}
+.black-link-underline:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
 .yellow-link {
   color: #fce504 !important;
   text-decoration: none !important;
@@ -43,6 +63,14 @@
 .yellow-link:hover {
   color: #fce504 !important;
   text-decoration: underline !important;
+}
+.yellow-link-underline {
+  color: #fce504 !important;
+  text-decoration: underline !important;
+}
+.yellow-link-underline:hover {
+  color: #fce504 !important;
+  text-decoration: none !important;
 }
 .white-link {
   color: #fff !important;
@@ -58,6 +86,7 @@
 .text-white,
 .header-title,
 .contacts-panel__order-skype,
+.auto-class-panel__choose,
 .payment-ways__text {
   color: #fff !important;
 }
@@ -72,7 +101,10 @@
 .text-center,
 .header-title,
 .contacts-panel,
-.sidebar__order-btn {
+.auto-class-panel__item,
+.sidebar__order-btn,
+.pros__item,
+.awards__item {
   text-align: center;
 }
 .text-right {
@@ -84,6 +116,10 @@
 }
 .underline {
   text-decoration: underline !important;
+}
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block; /* For Firefox */
 }
 @font-face {
   font-family: OSSemiBold;
@@ -100,6 +136,7 @@
 * {
   font-family: OSSemiBold;
   outline: none;
+  color: #000;
 }
 a,
 button {
@@ -113,7 +150,9 @@ a:hover {
   color: #000 !important;
   text-decoration: underline !important;
 }
-html,
+html {
+  height: 100%;
+}
 body {
   min-height: 100%;
   position: relative;
@@ -132,6 +171,7 @@ button {
   min-height: 500px;
   overflow: hidden;
   background-position: top;
+  position: relative;
 }
 .login-link {
   background-image: url("../images/icons/yellow/cabinet.png");
@@ -162,6 +202,7 @@ button {
   padding: 10px 20px;
   width: 260px;
   box-sizing: border-box;
+  border-radius: 3px;
 }
 .contacts-panel__hr {
   width: 100%;
@@ -173,6 +214,10 @@ button {
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+.contacts-panel__number-input {
+  background: transparent;
+  border: none;
 }
 .contacts-panel__send-number-btn {
   background-image: url("../images/arrow-yellow.png");
@@ -211,6 +256,58 @@ button {
 }
 .contacts-panel__expand-btn.collapse {
   transform: rotate(0deg);
+}
+.auto-class-panel {
+  border-radius: 3px 3px 0 0;
+  border: 5px solid #fdd602;
+  position: absolute;
+  bottom: 0;
+  left: 320px;
+  padding: 10px;
+  width: 600px;
+  height: 225px;
+  border-bottom: 0;
+}
+.auto-class-panel__choose {
+  background-image: url("../images/icons/white/auto-classes.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  margin-left: 170px;
+}
+.auto-class-panel__items {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+.auto-class-panel__item {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 0;
+}
+.auto-class-panel__item img {
+  width: 150px;
+  opacity: 0.9;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -ms-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.auto-class-panel__item.active img {
+  opacity: 1;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -ms-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.auto-class-panel__item-title {
+  color: #fff;
+}
+.auto-class-panel__item.active .auto-class-panel__item-title {
+  color: #fce504;
 }
 .sidebar {
   background: #000;
@@ -392,5 +489,59 @@ button {
 }
 .main {
   width: 100%;
-  margin-left: 320px;
+  padding-left: 320px;
+  box-sizing: padding-box;
+}
+.map {
+  width: 100%;
+  background: #bc8f8f;
+  height: 760px;
+}
+.pros {
+  padding: 40px 50px;
+}
+.pros__items {
+  margin: 40px 0 0 40px;
+  overflow: hidden;
+}
+.pros__item {
+  margin-right: 40px;
+  background-image: url("/images/icons/yellow/car-big.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 90px;
+  display: inline-block;
+  width: 160px;
+  float: left;
+}
+.they-trust {
+  background-color: #fedd3a;
+  padding: 50px;
+}
+.they-trust__imgs {
+  margin-top: 60px;
+}
+.they-trust__img {
+  margin-left: 60px;
+}
+.awards {
+  padding: 50px;
+  overflow: hidden;
+}
+.awards__items {
+  margin-top: 50px;
+  margin-left: 30px;
+}
+.awards__item {
+  display: inline-block;
+  width: 200px;
+  float: left;
+}
+.awards__item-img {
+  width: 115px;
+  margin: 0 auto;
+  display: block;
+}
+.awards__item-title {
+  margin-top: 20px;
 }

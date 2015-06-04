@@ -16,6 +16,7 @@
 *
   font-family: OSSemiBold
   outline none
+  color #000000
 
 a, button
   cursor: pointer !important
@@ -28,7 +29,9 @@ a:hover
   color black !important
   text-decoration: underline !important
 
-html, body
+html
+  height: 100%
+body
   min-height: 100%
   position: relative
 
@@ -48,6 +51,7 @@ button
   min-height 500px
   overflow: hidden
   background-position top
+  position: relative
 
 .login-link
   @extend .h5
@@ -80,6 +84,7 @@ button
   padding 10px 20px
   width: 260px
   box-sizing border-box
+  border-radius 3px
 
 .contacts-panel__hr
   width: 100%
@@ -95,6 +100,10 @@ button
 .contacts-panel__number-placeholder
   @extend .h3
   @extend .text-yellow
+
+.contacts-panel__number-input
+  background: transparent
+  border none
 
 .contacts-panel__send-number-btn
   background-image: url("../images/arrow-yellow.png")
@@ -133,7 +142,57 @@ button
 .contacts-panel__expand-btn.collapse
   transform rotate(0deg)
 
+.auto-class-panel
+  border-radius 3px 3px 0 0
+  border 5px solid hotyellow
+  position: absolute
+  bottom 0
+  left 320px
+  padding: 10px
+  width: 600px
+  height: 225px
+  border-bottom 0
 
+.auto-class-panel__choose
+  @extend .h4
+  @extend .text-white
+  icon-bg('../images/icons/white/auto-classes.png');
+  margin-left: 170px
+
+.auto-class-panel__items
+  margin-left: 40px
+  margin-top: 30px
+
+.auto-class-panel__item
+  @extend .text-center
+  display: inline-block
+  cursor: pointer
+  margin-right: 20px
+  margin-top: 0
+
+.auto-class-panel__item img
+  width: 150px
+  opacity 0.9
+  -webkit-transition: 0.2s ease-in
+  -moz-transition: 0.2s ease-in
+  -ms-transition: 0.2s ease-in
+  -o-transition: 0.2s ease-in
+  transition: 0.2s ease-in
+
+.auto-class-panel__item.active img
+  opacity: 1
+  -webkit-transition: 0.2s ease-in
+  -moz-transition: 0.2s ease-in
+  -ms-transition: 0.2s ease-in
+  -o-transition: 0.2s ease-in
+  transition: 0.2s ease-in
+
+.auto-class-panel__item-title
+  @extend .h4
+  color white
+
+.auto-class-panel__item.active .auto-class-panel__item-title
+  color yellow
 //-----SIDEBAR-----
 
 .sidebar
@@ -213,4 +272,66 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .main
   width: 100%
-  margin-left 320px
+  padding-left 320px
+  box-sizing padding-box
+
+//-----MAP-----
+.map
+  width: 100%
+  background: rosybrown
+  height: 760px
+
+
+//-----PROS-----
+.pros
+  padding 40px 50px
+
+.pros__items
+  margin: 40px 0 0 40px
+  overflow: hidden
+
+.pros__item
+  @extend .h4
+  @extend .text-center
+  margin-right: 40px
+  background-image: url("/images/icons/yellow/car-big.png")
+  background-position: top center
+  background-repeat: no-repeat
+  padding-top: 90px
+  display: inline-block
+  width: 160px
+  float: left
+
+//-----THEYTRUST-----
+.they-trust
+  background-color: paleyellow
+  padding 50px
+
+.they-trust__imgs
+  margin-top: 60px
+.they-trust__img
+  margin-left: 60px
+
+//-----AWARDS-----
+.awards
+  padding 50px
+  overflow: hidden
+
+.awards__items
+  margin-top: 50px
+  margin-left: 30px
+
+.awards__item
+  @extend .h5
+  @extend .text-center
+  display: inline-block
+  width: 200px
+  float: left
+
+.awards__item-img
+  width: 115px
+  margin: 0 auto
+  display: block
+
+.awards__item-title
+  margin-top: 20px
