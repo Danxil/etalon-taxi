@@ -1,0 +1,28 @@
+extends ../includes/layout
+
+block main-content
+    .header
+        a.login-link.yellow-link Кабинет
+        .logo
+        .header-title ОНЛАЙН ЗАКАЗ
+    .sidebar
+        button.sidebar__order-btn Заказать такси
+        .sidenav
+            a.sidenav__item.sidenav__item_home.white-link.active Главная
+            a.sidenav__item.sidenav__item_services.white-link Услуги
+            a.sidenav__item.sidenav__item_how-to-pay.white-link Как оплатить
+            a.sidenav__item.sidenav__item_for-corps.white-link Для предприятий
+            a.sidenav__item.sidenav__item_pros.white-link Преимущества
+            a.sidenav__item.sidenav__item_auto-classes.white-link Классы авто
+            a.sidenav__item.sidenav__item_contacts.white-link Контакты
+        a.sidebar__fb.white-link Наш Фейсбук
+        .flags
+            a.flags__ru
+            a.flags__ua
+            a.flags__gb
+        .copyright © 2015 Эталон такси
+        .payment-ways
+            img.payment-ways__item(src="/images/mc.png")
+            img.payment-ways__item(src="/images/visa.png")
+            .payment-ways__text Оплатите поездку картой любого банка в авто или на сайте
+    .main(ng-view)

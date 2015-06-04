@@ -1,0 +1,331 @@
+.h1 {
+  font-size: 26pt !important;
+}
+.h2,
+.header-title {
+  font-size: 24pt !important;
+}
+.h3,
+.sidebar__order-btn,
+.sidenav__item,
+.sidebar__fb,
+.copyright {
+  font-size: 14pt !important;
+}
+.h4,
+.login-link {
+  font-size: 13pt !important;
+}
+.h5,
+.payment-ways__text {
+  font-size: 12pt !important;
+}
+.h6 {
+  font-size: 11pt !important;
+}
+.semibold {
+  font-family: OSSemiBold;
+}
+.bold,
+.header-title {
+  font-family: OSBold;
+}
+.light {
+  font-family: OSLight;
+}
+.yellow-link {
+  color: #fce504 !important;
+  text-decoration: none !important;
+}
+.yellow-link:hover {
+  color: #fce504 !important;
+  text-decoration: underline !important;
+}
+.white-link {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.white-link:hover {
+  color: #fce504 !important;
+  text-decoration: none !important;
+}
+.white-link.active {
+  color: #fce504 !important;
+}
+.text-white,
+.header-title,
+.payment-ways__text {
+  color: #fff !important;
+}
+.text-black {
+  color: #000 !important;
+}
+.text-yellow,
+.copyright {
+  color: #fce504 !important;
+}
+.text-center,
+.header-title,
+.sidebar__order-btn {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.underline {
+  text-decoration: underline !important;
+}
+@font-face {
+  font-family: OSSemiBold;
+  src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: OSBold;
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: OSLight;
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+* {
+  font-family: OSSemiBold;
+  outline: none;
+}
+a,
+button {
+  cursor: pointer !important;
+}
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #000 !important;
+  text-decoration: underline !important;
+}
+html,
+body {
+  min-height: 100%;
+  position: relative;
+}
+label {
+  cursor: pointer;
+}
+button {
+  border: none;
+}
+.header {
+  width: 100%;
+  background-color: #000;
+  background-image: url("../images/header_bg.png");
+  background-size: cover;
+  min-height: 500px;
+  overflow: hidden;
+  background-position: top;
+}
+.login-link {
+  background-image: url("../images/icons/yellow/cabinet.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  margin: 25px 0 0 40px;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -157px;
+  width: 313px;
+  height: 103px;
+  background-image: url("../images/logo.png");
+  top: 70px;
+}
+.header-title {
+  margin-top: 200px;
+  letter-spacing: 7pt;
+}
+.sidebar {
+  background: #000;
+  width: 320px;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  bottom: 0;
+  padding-left: 40px;
+}
+.sidebar__order-btn {
+  background-color: #fdd602;
+  border-radius: 3px;
+  width: 200px;
+  padding: 15px;
+}
+.sidenav {
+  margin-top: 30px;
+}
+.sidenav__item {
+  margin-top: 15px;
+}
+.sidenav__item_home {
+  background-image: url("../images/icons/white/home.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_home:hover,
+.sidenav__item_home.active {
+  background-image: url("../images/icons/yellow/home.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_services {
+  background-image: url("../images/icons/white/services.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_services:hover,
+.sidenav__item_services.active {
+  background-image: url("../images/icons/yellow/services.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_how-to-pay {
+  background-image: url("../images/icons/white/how-to-pay.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_how-to-pay:hover,
+.sidenav__item_how-to-pay.active {
+  background-image: url("../images/icons/yellow/how-to-pay.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_for-corps {
+  background-image: url("../images/icons/white/for-corps.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_for-corps:hover,
+.sidenav__item_for-corps.active {
+  background-image: url("../images/icons/yellow/for-corps.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_pros {
+  background-image: url("../images/icons/white/pros.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_pros:hover,
+.sidenav__item_pros.active {
+  background-image: url("../images/icons/yellow/pros.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_auto-classes {
+  background-image: url("../images/icons/white/auto-classes.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_auto-classes:hover,
+.sidenav__item_auto-classes.active {
+  background-image: url("../images/icons/yellow/auto-classes.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_contacts {
+  background-image: url("../images/icons/white/contacts.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidenav__item_contacts:hover,
+.sidenav__item_contacts.active {
+  background-image: url("../images/icons/yellow/contacts.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.sidebar__fb {
+  margin-top: 20px;
+  background-image: url("../images/facebook.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+}
+.flags {
+  margin-top: 60px;
+}
+.flags__ru {
+  margin-right: 20px;
+  height: 30px;
+  width: 43px;
+  background-image: url("../images/flag_ru.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: inline-block;
+}
+.flags__ua {
+  margin-right: 20px;
+  height: 30px;
+  width: 43px;
+  background-image: url("../images/flag_ua.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: inline-block;
+}
+.flags__gb {
+  margin-right: 20px;
+  height: 30px;
+  width: 43px;
+  background-image: url("../images/flag_gb.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: inline-block;
+}
+.copyright {
+  margin-top: 20px;
+}
+.payment-ways {
+  margin-top: 50px;
+}
+.payment-ways__item {
+  margin-right: 10px;
+  display: inline-block;
+}
+.payment-ways__text {
+  margin-top: 10px;
+  width: 180px;
+}
+.main {
+  width: 100%;
+  margin-left: 320px;
+}

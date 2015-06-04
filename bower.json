@@ -1,0 +1,10 @@
+{
+  "name": "EtalonTaxi",
+  "version": "0.0.0",
+  "authors": [
+    "Joseph <eriendel97@gmail.com>"
+  ],
+  "description": "EtalonTaxi",
+  "license": "MIT",
+  "private": true
+}
