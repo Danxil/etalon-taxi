@@ -1,9 +1,11 @@
-.h1 {
+.h1,
+.order-form__counter-digit {
   font-size: 55pt !important;
   line-height: 52pt;
 }
 .h2,
-.header-title {
+.header-title,
+.order-form__order-btn {
   font-size: 24pt !important;
 }
 .h3,
@@ -17,18 +19,41 @@
 .sidenav__item,
 .sidebar__fb,
 .copyright,
+.order-form__wherefrom-title,
+.order-form__whereto-title,
+.order-form-phone-title,
+.order-form__cost-title,
+.order-form__cost-after,
+.order-form__counter-text,
+.order-form__order-with-card-btn,
 .pros__item {
   font-size: 14pt !important;
 }
 .h5,
 .login-link,
 .contacts-panel__order-skype,
+.order-form__without-final,
+.order-form__additional-requirements-button,
 .awards__item {
   font-size: 13pt !important;
 }
 .h6,
-.payment-ways__text {
-  font-size: 12pt !important;
+.input-text,
+.payment-ways__text,
+.order-form__wherefrom-street,
+.order-form__whereto-street,
+.order-form__wherefrom-house,
+.order-form__whereto-house,
+.order-form__additional-requirements-list,
+.order-form__phone,
+.order-form__corporate,
+.order-form__have-a-card,
+.order-form__corporate input,
+.order-form__have-a-card input,
+.order-form__cashless-code,
+.order-form__card-code,
+.order-form__payment-methods-text {
+  font-size: 11pt !important;
 }
 .semibold {
   font-family: OSSemiBold;
@@ -37,7 +62,12 @@
 .header-title {
   font-family: OSBold;
 }
-.light {
+.extrabold,
+.order-form__order-with-card-btn {
+  font-family: OSExtraBold;
+}
+.light,
+.order-form__counter-digit {
   font-family: OSLight;
 }
 .black-link {
@@ -87,7 +117,8 @@
 .header-title,
 .contacts-panel__order-skype,
 .auto-class-panel__choose,
-.payment-ways__text {
+.payment-ways__text,
+.order-form__counter-digit {
   color: #fff !important;
 }
 .text-black {
@@ -103,6 +134,9 @@
 .contacts-panel,
 .auto-class-panel__item,
 .sidebar__order-btn,
+.order-form__left-side-inner,
+.order-form__additional-requirements-button,
+.order-form__counter-digit,
 .pros__item,
 .awards__item {
   text-align: center;
@@ -111,7 +145,8 @@
   text-align: right;
 }
 .text-left,
-.contacts-panel__order-skype {
+.contacts-panel__order-skype,
+.order-form__additional-requirements-list {
   text-align: left;
 }
 .underline {
@@ -121,6 +156,80 @@
   content: attr(placeholder);
   display: block; /* For Firefox */
 }
+.input-text,
+.order-form__wherefrom-street,
+.order-form__whereto-street,
+.order-form__wherefrom-house,
+.order-form__whereto-house,
+.order-form__phone,
+.order-form__cashless-code,
+.order-form__card-code {
+  padding: 12px 25px;
+  border: 1px solid #fdc43b;
+  border-radius: 3px;
+  width: 100%;
+}
+.input-text::-webkit-input-placeholder,
+.order-form__wherefrom-street::-webkit-input-placeholder,
+.order-form__whereto-street::-webkit-input-placeholder,
+.order-form__wherefrom-house::-webkit-input-placeholder,
+.order-form__whereto-house::-webkit-input-placeholder,
+.order-form__phone::-webkit-input-placeholder,
+.order-form__cashless-code::-webkit-input-placeholder,
+.order-form__card-code::-webkit-input-placeholder {
+  color: #a5a5a5 !important;
+}
+.input-text:-moz-placeholder,
+.order-form__wherefrom-street:-moz-placeholder,
+.order-form__whereto-street:-moz-placeholder,
+.order-form__wherefrom-house:-moz-placeholder,
+.order-form__whereto-house:-moz-placeholder,
+.order-form__phone:-moz-placeholder,
+.order-form__cashless-code:-moz-placeholder,
+.order-form__card-code:-moz-placeholder {
+  color: #a5a5a5 !important;
+}
+.input-text::-moz-placeholder,
+.order-form__wherefrom-street::-moz-placeholder,
+.order-form__whereto-street::-moz-placeholder,
+.order-form__wherefrom-house::-moz-placeholder,
+.order-form__whereto-house::-moz-placeholder,
+.order-form__phone::-moz-placeholder,
+.order-form__cashless-code::-moz-placeholder,
+.order-form__card-code::-moz-placeholder {
+  color: #a5a5a5 !important;
+}
+.input-text:-ms-input-placeholder,
+.order-form__wherefrom-street:-ms-input-placeholder,
+.order-form__whereto-street:-ms-input-placeholder,
+.order-form__wherefrom-house:-ms-input-placeholder,
+.order-form__whereto-house:-ms-input-placeholder,
+.order-form__phone:-ms-input-placeholder,
+.order-form__cashless-code:-ms-input-placeholder,
+.order-form__card-code:-ms-input-placeholder {
+  color: #a5a5a5 !important;
+}
+input[type="checkbox"] {
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  background-color: #fff;
+  border: none;
+  -webkit-box-shadow: 0px 0px 2px 1px #fdc43b;
+  -moz-box-shadow: 0px 0px 2px 1px #fdc43b;
+  box-shadow: 0px 0px 2px 1px #fdc43b;
+  border-radius: 2px;
+  appearance: none;
+  -moz-appearance: none;
+/* Firefox */
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  background-image: url("../images/checkbox.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 @font-face {
   font-family: OSSemiBold;
   src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
@@ -128,6 +237,10 @@
 @font-face {
   font-family: OSBold;
   src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: OSExtraBold;
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
 }
 @font-face {
   font-family: OSLight;
@@ -492,10 +605,197 @@ button {
   padding-left: 320px;
   box-sizing: padding-box;
 }
-.map {
+.order-form {
+  background: rgba(253,214,2,0.8);
+  position: absolute;
+  top: 500px;
+  left: 320px;
+  right: 50px;
+  padding: 20px;
+}
+.order-form__left-side {
+  float: left;
   width: 100%;
-  background: #bc8f8f;
+  margin-right: -500px;
+  padding-right: 250px;
+}
+.order-form__left-side-inner {
+  width: 90%;
+  margin: 0 5%;
+}
+.order-form__wherefrom-title,
+.order-form__whereto-title {
+  background-image: url("../images/icons/black/cabinet.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  display: inline-block;
+}
+.order-form__wherefrom-inputs,
+.order-form__whereto-inputs {
+  display: block;
+  width: 100%;
+  margin: 10px 0 15px 0;
+}
+.order-form__wherefrom-street,
+.order-form__whereto-street {
+  border-right: 0;
+  border-radius: 3px 0 0 3px;
+  width: 75%;
+}
+.order-form__wherefrom-house,
+.order-form__whereto-house {
+  border-radius: 0 3px 3px 0;
+  width: 25%;
+}
+.order-form__without-final input {
+  margin: 0 10px -3px 0;
+}
+.order-form__additional-requirements {
+  margin-top: 20px;
+  position: relative;
+}
+.order-form__additional-requirements-button {
+  width: 100%;
+  border: 1px solid #fff;
+  padding: 15px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fffc00;
+}
+.order-form__additional-requirements-button:after {
+  content: '';
+  background-image: url("../images/triangle-black.png");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 9px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4.5px;
+  right: 100px;
+  transition: 0.3s ease-in;
+}
+.order-form__additional-requirements-button.expanded:after {
+  content: '';
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.order-form__additional-requirements-list {
+  position: absolute;
+  background: #fff;
+  left: 0;
+  right: -1px;
+  top: 50px;
+  transition: 0.3s ease-in;
+  height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  border-radius: 0 0 3px 3px;
+}
+.order-form__additional-requirements-list.expanded {
+  height: 320px;
+  padding: 20px;
+}
+.order-form__additional-requrement {
+  margin-top: 20px;
+}
+.order-form__additional-requrement input {
+  margin: 0 10px -4px 0;
+}
+.order-form-phone-title {
+  background-image: url("../images/icons/black/cabinet.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  display: inline-block;
+  margin-top: 20px;
+}
+.order-form__phone-container {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+.order-form__right-side {
+  float: right;
+  width: 250px;
+}
+.order-form__cost-title {
+  background-image: url("../images/icons/black/cabinet.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  display: inline-block;
+}
+.order-form__cost-after {
+  margin-top: 20px;
+  width: 60%;
+}
+.order-form__counter {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.order-form__counter-digit {
+  display: inline-block;
+  background-image: url("../images/counter-num.png");
+  width: 46px;
+  height: 74px;
+  margin-right: 10px;
+}
+.order-form__counter-text {
+  display: inline-block;
+}
+.order-form__corporate,
+.order-form__have-a-card {
+  margin-top: 10px;
+}
+.order-form__corporate input,
+.order-form__have-a-card input {
+  margin: 0 10px -3px 0;
+}
+.order-form__cashless-code,
+.order-form__card-code {
+  width: 80%;
+  margin-top: 10px;
+}
+.order-form__order-btn {
+  padding: 10px 15px;
+  background-image: url("../images/button.png");
+  margin-top: 20px;
+  width: 254px;
+  height: 64px;
+}
+.order-form__order-with-card-btn {
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background-color: #74f44a;
+  margin-top: 10px;
+  width: 254px;
+}
+.order-form__payment-methods {
+  margin-top: 15px;
+}
+.order-form__payment-methods-img {
+  display: inline-block;
+  margin-right: 10px;
+  float: left;
+  margin-top: 5px;
+}
+.order-form__payment-methods-text {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+.map .angular-google-map-container {
+  width: 100%;
   height: 760px;
+  overflow: hidden;
 }
 .pros {
   padding: 40px 50px;
@@ -509,7 +809,7 @@ button {
   background-image: url("/images/icons/yellow/car-big.png");
   background-position: top center;
   background-repeat: no-repeat;
-  padding-top: 90px;
+  padding-top: 100px;
   display: inline-block;
   width: 160px;
   float: left;

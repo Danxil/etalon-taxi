@@ -9,6 +9,10 @@
   src: url('../fonts/OpenSans-Bold.ttf') format("truetype");
 }
 @font-face {
+  font-family: OSExtraBold;
+  src: url('../fonts/OpenSans-ExtraBold.ttf') format("truetype");
+}
+@font-face {
   font-family: OSLight;
   src: url('../fonts/OpenSans-Light.ttf') format("truetype");
 }
@@ -74,6 +78,8 @@ button
   @extend .text-white
   margin-top: 140px
   letter-spacing 7pt
+
+//-----CONTACTS-----
 
 .contacts-panel
   @extend .text-center
@@ -141,6 +147,8 @@ button
 
 .contacts-panel__expand-btn.collapse
   transform rotate(0deg)
+
+//-----AUTOCLASS-----
 
 .auto-class-panel
   border-radius 3px 3px 0 0
@@ -275,12 +283,210 @@ for flagname in 'ru' 'ua' 'gb' {
   padding-left 320px
   box-sizing padding-box
 
-//-----MAP-----
-.map
-  width: 100%
-  background: rosybrown
-  height: 760px
+//-----ORDER-FORM-----
 
+.order-form
+  background: rgba(hotyellow, 0.8)
+  position: absolute
+  top: 500px
+  left: 320px
+  right: 50px
+  padding: 20px
+
+.order-form__left-side
+  float: left
+  width: 100%
+  margin-right: -500px
+  padding-right: 250px
+
+.order-form__left-side-inner
+  @extend .text-center
+  width: 90%
+  margin: 0 5%
+
+.order-form__wherefrom-title, .order-form__whereto-title
+  @extend .h4
+  icon-bg('../images/icons/black/cabinet.png');
+  display: inline-block
+
+.order-form__wherefrom-inputs, .order-form__whereto-inputs
+  display: block
+  width: 100%
+  margin: 10px 0 15px 0
+
+.order-form__wherefrom-street, .order-form__whereto-street
+  @extend .input-text
+  border-right: 0
+  border-radius 3px 0 0 3px
+  width: 75%
+  
+.order-form__wherefrom-house, .order-form__whereto-house
+  @extend .input-text
+  border-radius 0 3px 3px 0
+  width: 25%
+
+.order-form__without-final
+  @extend .h5
+
+.order-form__without-final input
+  margin 0 10px -3px 0
+
+.order-form__additional-requirements
+  margin-top: 20px
+  position: relative
+
+.order-form__additional-requirements-button
+  @extend .h5
+  @extend .text-center
+  width: 100%
+  border: 1px solid white
+  padding: 15px
+  border-radius 3px
+  position: relative
+  background-color: brightyellow
+
+.order-form__additional-requirements-button:after
+  content ''
+  background-image: url("../images/triangle-black.png")
+  background-repeat no-repeat
+  width: 17px
+  height: 9px
+  position: absolute
+  top: 50%
+  margin-top: -4.5px
+  right: 100px
+  transition 0.3s ease-in
+
+.order-form__additional-requirements-button.expanded:after
+  content ''
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+
+.order-form__additional-requirements-list
+  @extend .text-left
+  @extend .h6
+  position: absolute
+  background: white
+  left 0
+  right: -1px
+  top: 50px
+  transition 0.3s ease-in
+  height: 0
+  overflow: hidden
+  padding: 0 20px
+  border-radius 0 0 3px 3px
+
+.order-form__additional-requirements-list.expanded
+  height: 320px
+  padding: 20px
+
+.order-form__additional-requrement
+  margin-top: 20px
+
+.order-form__additional-requrement input
+  margin 0 10px -4px 0
+
+.order-form-phone-title
+  @extend .h4
+  icon-bg('../images/icons/black/cabinet.png');
+  display: inline-block
+  margin-top: 20px
+
+.order-form__phone-container
+  display: block
+  width: 100%
+  margin-top: 10px
+
+.order-form__phone
+  @extend .input-text
+
+.order-form__right-side
+  float: right
+  width: 250px
+
+.order-form__cost-title
+  @extend .h4
+  icon-bg('../images/icons/black/cabinet.png');
+  display: inline-block
+
+.order-form__cost-after
+  @extend .h4
+  margin-top: 20px
+  width: 60%
+
+.order-form__counter
+  margin-top: 20px
+  margin-bottom: 10px
+
+.order-form__counter-digit
+  @extend .h1
+  @extend .light
+  @extend .text-white
+  @extend .text-center
+  display: inline-block
+  background-image: url("../images/counter-num.png")
+  width: 46px
+  height: 74px
+  margin-right: 10px
+
+.order-form__counter-text
+  @extend .h4
+  display: inline-block
+
+.order-form__corporate, .order-form__have-a-card
+  @extend .h6
+  margin-top: 10px
+
+.order-form__corporate input, .order-form__have-a-card input
+  @extend .h6
+  margin 0 10px -3px 0
+
+.order-form__cashless-code, .order-form__card-code
+  @extend .input-text
+  width: 80%
+  margin-top: 10px
+
+.order-form__order-btn
+  @extend .h2
+  padding 10px 15px
+  background-image: url("../images/button.png")
+  margin-top: 20px
+  width: 254px
+  height: 64px
+
+.order-form__order-with-card-btn
+  @extend .h4
+  @extend .extrabold
+  padding 10px
+  border 1px solid white
+  border-radius 3px
+  background-color green
+  margin-top: 10px
+  width: 254px
+
+.order-form__payment-methods
+  margin-top: 15px
+
+.order-form__payment-methods-img
+  display: inline-block
+  margin-right: 10px
+  float: left
+  margin-top: 5px
+
+.order-form__payment-methods-text
+  @extend .h6
+  display: inline-block
+  width: 50%
+  float: left
+
+//-----MAP-----
+.map .angular-google-map-container
+  width: 100%
+  height: 760px
+  overflow: hidden
 
 //-----PROS-----
 .pros
@@ -297,7 +503,7 @@ for flagname in 'ru' 'ua' 'gb' {
   background-image: url("/images/icons/yellow/car-big.png")
   background-position: top center
   background-repeat: no-repeat
-  padding-top: 90px
+  padding-top: 100px
   display: inline-block
   width: 160px
   float: left

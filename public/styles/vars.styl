@@ -4,6 +4,9 @@ hotyellow = #fdd602
 yellow = #fce504
 brightyellow = #fffc00
 paleyellow = #fedd3a
+borderyellow = #fdc43b
+gray = #a5a5a5
+green = #74f44a
 
 .h1
   font-size: 55pt !important
@@ -17,12 +20,14 @@ paleyellow = #fedd3a
 .h5
   font-size: 13pt !important
 .h6
-  font-size: 12pt !important
+  font-size: 11pt !important
 
 .semibold
   font-family OSSemiBold
 .bold
   font-family OSBold
+.extrabold
+  font-family OSExtraBold
 .light
   font-family OSLight
 
@@ -107,3 +112,31 @@ placeholder-color(color)
   content: attr(placeholder);
   display: block; /* For Firefox */
 }
+
+.input-text
+  @extend .h6
+  placeholder-color(gray)
+  padding 12px 25px
+  border 1px solid borderyellow
+  border-radius 3px
+  width: 100%
+
+input[type="checkbox"]
+  width: 21px
+  height: 21px
+  display: inline-block
+  background-color: white
+  border none
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(borderyellow, 1);
+  -moz-box-shadow: 0px 0px 2px 1px rgba(borderyellow, 1);
+  box-shadow: 0px 0px 2px 1px rgba(borderyellow, 1);
+  border-radius 2px
+  appearance:none;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none;
+  cursor: pointer
+
+input[type="checkbox"]:checked
+  background-image: url("../images/checkbox.png")
+  background-repeat no-repeat
+  background-position center center
