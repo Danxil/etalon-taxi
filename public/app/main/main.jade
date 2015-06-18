@@ -4,12 +4,12 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
         .order-form__left-side-inner
             .order-form__wherefrom-title Куда подать такси
             .order-form__wherefrom-inputs
-                input.order-form__wherefrom-street(type="text", ng-model="whereFromStreet", placeholder="Название улицы")
-                input.order-form__wherefrom-house(type="text", ng-model="whereFromHouse", placeholder="№ дома")
-            .order-form__whereto-title Точка назначения
-            .order-form__whereto-inputs
-                input.order-form__whereto-street(type="text", ng-model="whereToStreet", placeholder="Название улицы", ng-disabled="withoutFinalPoint")
-                input.order-form__whereto-house(type="text", ng-model="whereToHouse", placeholder="№ дома", ng-disabled="withoutFinalPoint")
+                input.order-form__wherefrom-street(type="text", ng-model="application.from.address", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+            div.to-point(data-ng-repeat="item in application.to")
+                .order-form__whereto-title Точка назначения
+                .order-form__whereto-inputs
+                    input.order-form__whereto-street(type="text", ng-model="item.address", ng-disabled="withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+            button.add-new-pint(ng-disabled="withoutFinalPoint" data-ng-click="addNewPoint()") +
             .order-form__without-final
                 input(type="checkbox", id="withoutFinalPoint", ng-model="withoutFinalPoint")
                 label(for="withoutFinalPoint") Поездка по городу, без точной точки назначения
