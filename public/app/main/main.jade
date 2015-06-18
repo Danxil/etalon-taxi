@@ -4,11 +4,11 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
         .order-form__left-side-inner
             .order-form__wherefrom-title Куда подать такси
             .order-form__wherefrom-inputs
-                input.order-form__wherefrom-street(type="text", ng-model="application.from.address", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                input.order-form__wherefrom-street(placeholder="Название улицы или места", type="text", ng-model="application.from.address", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
             div.to-point(data-ng-repeat="item in application.to")
                 .order-form__whereto-title Точка назначения
                 .order-form__whereto-inputs
-                    input.order-form__whereto-street(type="text", ng-model="item.address", ng-disabled="withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                    input.order-form__whereto-street(placeholder="Название улицы или места" type="text", ng-model="item.address", ng-disabled="withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
             button.add-new-pint(ng-disabled="withoutFinalPoint" data-ng-click="addNewPoint()") +
             .order-form__without-final
                 input(type="checkbox", id="withoutFinalPoint", ng-model="withoutFinalPoint")
@@ -67,11 +67,21 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
         .order-form__corporate(ng-show="!haveACard")
             input(type="checkbox", id="isCorporate", ng-model="isCorporate")
             label(for="isCorporate") Я корпоративный клиент
-        input(type="text", placeholder="Ваш код безнала", ng-show="isCorporate").order-form__cashless-code
+        div(ng-show="isCorporate")
+            input(type="text", placeholder="Ваш код безнала").order-form__cashless-code
+            div.order-form__corporate
+                input(type="checkbox", id="isVoucher", ng-model="isVoucher")
+                label(for="isVoucher") Ваучер, фаммилия
+                div.order-form__corporate(ng-show="isVoucher")
+                    div.order-form__corporate
+                        input(type="text", placeholder="Ваучер").order-form__card-code
+                    div.order-form__corporate
+                        input(type="text", placeholder="Фаммилия").order-form__card-code
         .order-form__have-a-card(ng-show="!isCorporate")
             input(type="checkbox", id="haveACard", ng-model="haveACard")
-            label(for="haveACard") У меня есть карта
-        input(type="text", placeholder="Код карты", ng-show="haveACard").order-form__card-code
+            label(for="haveACard") Скидочная карта
+        div(ng-show="haveACard")
+            input(type="text", placeholder="Код карты").order-form__card-code
         button.order-form__order-btn(ng-click="order()") ЗАКАЗАТЬ
         button.order-form__order-with-card-btn(ng-click="order()") ОПЛАТИТЬ КАРТОЙ
         .order-form__payment-methods

@@ -297,7 +297,7 @@ button {
   background-size: contain;
   min-height: 530px;
   overflow: hidden;
-  background-position: top;
+  background-position: -70px 0;
   position: relative;
   background-repeat: no-repeat;
 }
@@ -705,7 +705,7 @@ button {
 .order-form__wherefrom-street,
 .order-form__whereto-street {
   border-right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px 3px;
 }
 .order-form__wherefrom-house,
 .order-form__whereto-house {
