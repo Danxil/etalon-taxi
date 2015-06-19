@@ -1,4 +1,4 @@
-angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $document) {
+angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $document, $location) {
     $scope.autoTypes = [
         {
             type: 'standard',
@@ -14,6 +14,11 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
         },
     ]
 
+    $scope.$on('$locationChangeSuccess', function(){
+        $scope.chooseAutoClassAvailable = $location.$$path == '/'
+    })
+
+    console.log($scope.chooseAutoClassAvailable)
     $scope.application = {
         autoClass: $scope.autoTypes[0].type,
         from: {

@@ -177,10 +177,33 @@ button
   position: absolute
   bottom 0
   left 320px
-  padding: 10px
   width: 600px
   height: 225px
   border-bottom 0
+
+  .choose-auto
+    padding: 10px
+
+  .make-to-tel
+    height 100%
+    background url(http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg) center
+    background-size cover
+    background-repeat no-repeat
+    position relative
+
+    .title
+      line-height 100%
+      font-size 40px
+      background rgba(255, 255, 0, 0.58)
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      margin 0
+      text-transform: uppercase;
+      width 300px
+      padding-top: 66px;
+      text-align center
 
 .auto-class-panel__choose
   @extend .h4
@@ -427,7 +450,7 @@ for flagname in 'ru' 'ua' 'gb' {
   border-radius 0 0 3px 3px
 
 .order-form__additional-requirements-list.expanded
-  height: 320px
+  height: 345px
   padding: 20px
 
 .order-form__additional-requrement
@@ -567,6 +590,7 @@ for flagname in 'ru' 'ua' 'gb' {
 .awards__items
   margin-top: 50px
   margin-left: 30px
+  overflow hidden
 
 .awards__item
   @extend .h5
@@ -618,3 +642,63 @@ for flagname in 'ru' 'ua' 'gb' {
     opacity:1;
     max-height:500px;
   }
+
+.section
+  width 100%
+  display table
+  font-size 0
+  .column
+    display table-cell
+    &.one
+      padding 30px 50px 50px
+      .sub-column
+        display inline-block
+        &.one
+          width 60%
+        &.two
+          padding-left 40px
+          width 40%
+          vertical-align: top;
+    &.two
+      width 310px
+
+  .illustration
+    background-repeat no-repeat
+    background-size cover
+    background-position center
+
+  .section-title
+    margin 40px 0 25px
+    font-size 20px
+    font-family OSSemiBold
+    text-transform uppercase
+  .section-label
+    font-size 15px
+    font-family OSSemiBold
+    margin: 10px 0 0;
+    line-height 1.7
+  .section-text
+    font-family OSLight
+    font-size 15px
+    margin: 3px 0 0;
+
+
+.services-table-wrapper
+  padding 60px 40px
+
+.services-table
+  width 100%
+  box-sizing border-box
+
+  th, td
+    border 1px solid rgba(255, 0, 0, 0.5)
+    padding 20px 20px
+    text-align center
+
+  th
+    font-size 15px
+
+  td
+    font-family OSLight
+    &:first-child
+      text-align left
