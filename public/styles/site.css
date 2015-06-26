@@ -294,7 +294,7 @@ button {
   width: 100%;
   background-color: #000;
   background-image: url("../images/header_bg.png");
-  background-size: contain;
+  background-size: 88%;
   min-height: 530px;
   overflow: hidden;
   background-position: -70px 0;
@@ -324,7 +324,7 @@ button {
 }
 .contacts-panel {
   float: right;
-  border: 5px solid #fdd602;
+  border: 1px solid #fdd602;
   margin-right: 50px;
   margin-top: -230px;
   padding: 10px 20px;
@@ -412,11 +412,11 @@ button {
 }
 .auto-class-panel {
   border-radius: 3px 3px 0 0;
-  border: 5px solid #fdd602;
+  border: 1px solid #fdd602;
   position: absolute;
   bottom: 0;
   left: 320px;
-  width: 600px;
+  right: 350px;
   height: 225px;
   border-bottom: 0;
 }
@@ -425,7 +425,7 @@ button {
 }
 .auto-class-panel .make-to-tel {
   height: 100%;
-  background: url("http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg") center;
+  background: url("../images/how-to-pay/banner.png") center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -464,22 +464,21 @@ button {
   position: relative;
 }
 .auto-class-panel__item:before {
+  background-size: contain;
+  background-image: url("../images/icons/circle.png");
+  background-repeat: no-repeat;
   content: '';
-  background: #fce504;
   width: 175px;
-  height: 165px;
+  height: 40px;
   display: inline-block;
   position: absolute;
-  border-radius: 999px;
-  transition: transform 0.9s;
-  transform-style: preserve-3d;
-  transform: rotateX(90deg);
-  bottom: -39px;
+  transition: 0.9s;
+  bottom: 19px;
   left: -5px;
   opacity: 0;
 }
 .auto-class-panel__item.active:before {
-  transform: rotateX(80deg);
+  transform: rotateX(0deg);
   opacity: 1;
 }
 .auto-class-panel__item img {
@@ -523,6 +522,10 @@ button {
   border-radius: 3px;
   width: 200px;
   padding: 15px;
+  transition: 1s;
+}
+.sidebar__order-btn:hover {
+  transform: scale(1.1);
 }
 .sidenav {
   margin-top: 30px;
@@ -697,7 +700,7 @@ button {
   position: absolute;
   top: 530px;
   left: 320px;
-  right: 50px;
+  right: 0;
   padding: 20px;
 }
 .order-form__left-side {
@@ -986,12 +989,18 @@ button {
   vertical-align: top;
 }
 .section .column.two {
-  width: 310px;
+  width: 350px;
 }
 .section .illustration {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.section .illustration.auto {
+  background-size: contain;
+}
+.section .illustration.auto.yellow {
+  background-color: #fbff6e;
 }
 .section .section-title {
   margin: 40px 0 25px;

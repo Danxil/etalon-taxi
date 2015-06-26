@@ -1,0 +1,142 @@
+ui-gmap-google-map.map(center="map.center", zoom="16")
+.order-form
+    .order-form__left-side
+        .order-form__left-side-inner
+            .order-form__wherefrom-title Куда подать такси
+            .order-form__wherefrom-inputs
+                input.order-form__wherefrom-street(placeholder="Название улицы или места", type="text", ng-model="application.from.address", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                input.order-form__whereto-house(type="text", ng-model="whereToHouse", placeholder="№ дома", ng-disabled="withoutFinalPoint" typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+            div.to-point(data-ng-repeat="item in application.to")
+                .order-form__whereto-title Точка назначения
+                .order-form__whereto-inputs
+                    input.order-form__whereto-street(placeholder="Название улицы или места" type="text", ng-model="item.address", ng-disabled="withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                    input.order-form__whereto-house(type="text", ng-model="whereToHouse", placeholder="№ дома", ng-disabled="withoutFinalPoint" typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+            button.add-new-pint(ng-disabled="withoutFinalPoint" data-ng-click="addNewPoint()") +
+            .order-form__without-final
+                input(type="checkbox", id="withoutFinalPoint", ng-model="withoutFinalPoint")
+                label(for="withoutFinalPoint") Поездка по городу, без точной точки назначения
+            .order-form__additional-requirements
+                button.order-form__additional-requirements-button(ng-class="{expanded: additionalRequirementsExpanded}", ng-click="additionalRequirementsExpanded = !additionalRequirementsExpanded") Список требований и доп. услуг
+                .order-form__additional-requirements-list(ng-class="{expanded: additionalRequirementsExpanded}")
+                    .col-md-6
+                        .order-form__additional-requirements-side-title Водитель и автомобиль
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_exp10", ng-model="additionalRequirements.exp10")
+                            label(for="additionalRequirements_exp10") Стаж 10+ лет
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_eng", ng-model="additionalRequirements.eng")
+                            label(for="additionalRequirements_eng") Владение английским
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
+                            label(for="additionalRequirements_truck") Грузовая
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
+                            label(for="additionalRequirements_truck") Эконом
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
+                            label(for="additionalRequirements_truck") Комфорт
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
+                            label(for="additionalRequirements_truck") Универсал
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
+                            label(for="additionalRequirements_truck") Лимузин
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_manypeople", ng-model="additionalRequirements.manypeople")
+                            label(for="additionalRequirements_manypeople") 5-7 человек
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_smoking", ng-model="additionalRequirements.smoking")
+                            label(for="additionalRequirements_smoking") Можно курить в авто
+                    .col-md-6
+                        .order-form__additional-requirements-side-title Услуги
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_cardpayment", ng-model="additionalRequirements.cardpayment")
+                            label(for="additionalRequirements_cardpayment") Оплата картой
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_child", ng-model="additionalRequirements.child")
+                            label(for="additionalRequirements_child") Детское кресло
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_animals", ng-model="additionalRequirements.animals")
+                            label(for="additionalRequirements_animals") Перевозка животных
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_nameplate", ng-model="additionalRequirements.nameplate")
+                            label(for="additionalRequirements_nameplate") Встреча с табличкой
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_courier", ng-model="additionalRequirements.courier")
+                            label(for="additionalRequirements_courier") Курьер
+                        .order-form__additional-requrement
+                            input(type="checkbox", id="additionalRequirements_driver", ng-model="additionalRequirements.driver")
+                            label(for="additionalRequirements_driver") Драйвер
+            .order-form-phone-title(ng-show="toShowNumber()") Ваш номер телефона
+            .order-form__phone-container
+                input.order-form__phone(type="text", ng-model="phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber()")
+    .order-form__right-side
+        .order-form__cost-title Стоимость поездки
+        .order-form__cost-after(ng-show="withoutFinalPoint") Стоимость будет озвучена после поездки
+        .order-form__counter(ng-show="!withoutFinalPoint")
+            .order-form__counter-digit {{price.firstDigit}}
+            .order-form__counter-digit {{price.secondDigit}}
+            .order-form__counter-digit {{price.thirdDigit}}
+            .order-form__counter-text гривен
+        .order-form__corporate(ng-show="!haveACard")
+            input(type="checkbox", id="isCorporate", ng-model="isCorporate")
+            label(for="isCorporate") Я корпоративный клиент
+        div(ng-show="isCorporate")
+            input(type="text", placeholder="Ваш код безнала").order-form__cashless-code
+            div.order-form__corporate
+                input(type="checkbox", id="isVoucher", ng-model="isVoucher")
+                label(for="isVoucher") Ваучер, фаммилия
+                div.order-form__corporate(ng-show="isVoucher")
+                    div.order-form__corporate
+                        input(type="text", placeholder="Ваучер").order-form__card-code
+                    div.order-form__corporate
+                        input(type="text", placeholder="Фаммилия").order-form__card-code
+        .order-form__have-a-card(ng-show="!isCorporate")
+            input(type="checkbox", id="haveACard", ng-model="haveACard")
+            label(for="haveACard") Скидочная карта
+        div(ng-show="haveACard")
+            input(type="text", placeholder="Код карты").order-form__card-code
+        button.order-form__order-btn(ng-click="order()") ЗАКАЗАТЬ
+        .order-form__payment-methods
+            img.order-form__payment-methods-img(src="/images/mc.png")
+            img.order-form__payment-methods-img(src="/images/visa.png")
+            .order-form__payment-methods-text Оплата картой любого банка
+.pros
+    .h1.light ПРЕИМУЩЕСТВА
+    .pros__items
+        .pros__item 100% СВОЙ современный автопарк
+            br
+            a.yellow-link-underline смотреть фото
+        .pros__item Наши водители НЕ КУРЯТ
+        .pros__item Наши водители НЕ ЗНАЮТ ПЛОХИХ СЛОВ
+        .pros__item
+            a.black-link-underline ЕЖЕДНЕВНАЯ химчистка автомобилей
+.they-trust
+    .h1.light НАМ ДОВЕРЯЮТ
+    .they-trust__imgs
+        img.they-trust__img(src="/images/kyivstar.png")
+        img.they-trust__img(src="/images/mts.png")
+        img.they-trust__img(src="/images/kyivstar.png")
+        img.they-trust__img(src="/images/mts.png")
+.awards
+    .h1.light НАГРАДЫ
+    .awards__items
+        .awards__item
+            img.awards__item-img(src="/images/brend_roku.png")
+            .awards__item-title БРЕНД ГОДА 2012
+        .awards__item
+            img.awards__item-img(src="/images/brend_roku.png")
+            .awards__item-title ПРЕМИЯ
+                br
+                span «ТРАНСПОРТНЫЙ ОЛИМП»
+        .awards__item
+            img.awards__item-img(src="/images/brend_roku.png")
+            .awards__item-title  ПОБЕДИТЕЛЬ РЕЙТИНГА
+                br
+                span «ЗОЛОТАЯ ФОРТУНА»
+        .awards__item
+            img.awards__item-img(src="/images/brend_roku.png")
+            .awards__item-title
+                a.black-link-underline ГРАН-ПРИ
+                    br
+                    span «ВЫСШАЯ ПРОБА»

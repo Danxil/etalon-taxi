@@ -16,7 +16,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {templateUrl: '/partials/main/main', controller: 'etMainCtrl'})
-        .when('/main', {templateUrl: '/partials/main/main', controller: 'etMainCtrl'})
         .when('/contacts', {templateUrl: '/partials/contacts/contacts', controller: 'etContactsCtrl'})
         .when('/for-companies', {templateUrl: '/partials/for-companies/for-companies', controller: 'etForCompaniesCtrl'})
         .when('/how-to-pay', {templateUrl: '/partials/how-to-pay/how-to-pay', controller: 'etHowToPayCtrl'})

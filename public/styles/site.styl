@@ -51,7 +51,7 @@ button
   width: 100%
   background-color #000000
   background-image: url("../images/header_bg.png")
-  background-size contain
+  background-size 88%
   min-height 530px
   overflow: hidden
   background-position -70px 0
@@ -85,7 +85,7 @@ button
 .contacts-panel
   @extend .text-center
   float: right
-  border 5px solid hotyellow
+  border 1px solid hotyellow
   margin-right: 50px
   margin-top: -230px
   padding 10px 20px
@@ -173,11 +173,11 @@ button
 
 .auto-class-panel
   border-radius 3px 3px 0 0
-  border 5px solid hotyellow
+  border 1px solid hotyellow
   position: absolute
   bottom 0
   left 320px
-  width: 600px
+  right 350px
   height: 225px
   border-bottom 0
 
@@ -186,7 +186,7 @@ button
 
   .make-to-tel
     height 100%
-    background url(http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg) center
+    background url(../images/how-to-pay/banner.png) center
     background-size cover
     background-repeat no-repeat
     position relative
@@ -224,23 +224,22 @@ button
   position relative
 
   &:before
+    background-size: contain;
+    background-image url(../images/icons/circle.png)
+    background-repeat no-repeat
     content ''
-    background yellow
     width 175px
-    height 165px
+    height 40px
     display inline-block
     position absolute
-    border-radius 999px
-    transition: transform .9s;
-    transform-style: preserve-3d;
-    transform: rotateX(90deg);
-    bottom -39px
+    transition: .9s;
+    bottom 19px
     left -5px
     opacity 0
 
   &.active
     &:before
-      transform: rotateX(80deg);
+      transform: rotateX(0deg);
       opacity 1
 
 .auto-class-panel__item img
@@ -288,6 +287,10 @@ button
   border-radius 3px
   width: 200px
   padding 15px
+  transition 1s
+
+  &:hover
+    transform scale(1.1)
 
 .sidenav
   margin-top: 30px
@@ -359,7 +362,7 @@ for flagname in 'ru' 'ua' 'gb' {
   position: absolute
   top: 530px
   left: 320px
-  right: 50px
+  right: 0
   padding: 20px
 
 .order-form__left-side
@@ -660,12 +663,18 @@ for flagname in 'ru' 'ua' 'gb' {
           width 40%
           vertical-align: top;
     &.two
-      width 310px
+      width 350px
 
   .illustration
     background-repeat no-repeat
     background-size cover
     background-position center
+
+    &.auto
+      background-size contain
+
+      &.yellow
+        background-color #FBFF6E
 
   .section-title
     margin 40px 0 25px
