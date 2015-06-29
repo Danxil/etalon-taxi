@@ -38,38 +38,66 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
 
     $scope.menu = [
         {
-            name: 'Главная',
+            name: {
+                ru: 'Главная',
+                ua: 'Головна',
+                en: 'Main'
+            },
             link: '/',
             cssClass: 'home'
 
         },
         {
-            name: 'Услуги',
+            name: {
+                ru: 'Услуги',
+                ua: 'Послуги',
+                en: 'Service'
+            },
             link: '/services',
             cssClass: 'services'
         },
         {
-            name: 'Как оплатить',
+            name: {
+                ru: 'Как оплатить',
+                ua: 'Як сплатити',
+                en: 'How to pay'
+            },
             link: '/how-to-pay',
             cssClass: 'how-to-pay'
         },
         {
-            name: 'Для предприятий',
+            name: {
+                ru: 'Для предприятий',
+                ua: 'Для підприємств',
+                en: 'For business'
+            },
             link: '/for-companies',
             cssClass: 'for-corps'
         },
         {
-            name: 'Преимущества',
+            name: {
+                ru: 'Преимущества',
+                ua: 'Переваги',
+                en: 'Our bebefits'
+            },
             link: '/advantages',
             cssClass: 'pros'
         },
         {
-            name: 'Классы авто',
+            name: {
+                ru: 'Классы авто',
+                ua: 'Класи авто',
+                en: 'Class cars'
+            },
             link: '/auto-classes',
             cssClass: 'auto-classes'
         },
         {
-            name: 'Контакты',
+            name: {
+                ru: 'Контакты',
+                ua: 'Контакти',
+                en: 'Contacts'
+            },
             link: '/contacts',
             cssClass: 'contacts'
         }

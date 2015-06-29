@@ -5,39 +5,28 @@
             p.section-label !{__('advantagesText')}
         .column.two.illustration(style="background-image: url('/images/advantages/img.jpg')")
     .they-trust
-        .h1.light ПРЕИМУЩЕСТВА
-        .awards__items
-            .awards__item
-                img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title БРЕНД ГОДА 2012
-            .awards__item
-                img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title БРЕНД ГОДА 2012
-            .awards__item
-                img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title БРЕНД ГОДА 2012
-            .awards__item
-                img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title БРЕНД ГОДА 2012
+        .h1.light= __('advantages')
+        .pros__items
+            .pros__item= __('personalPark')
+                br
+                a.yellow-link-underline= __('viewPhoto')
+            .pros__item= __('driversNoSmoking')
+            .pros__item= __('noBadWords')
+            .pros__item
+                a.black-link-underline= __('cleaningSalon')
     .awards
-        .h1.light НАГРАДЫ
+        .h1.light= __('honors')
         .awards__items
             .awards__item
                 img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title БРЕНД ГОДА 2012
+                .awards__item-title!{__("brend2012")}
             .awards__item
                 img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title ПРЕМИЯ
-                    br
-                    span «ТРАНСПОРТНЫЙ ОЛИМП»
+                .awards__item-title!{__("transportOlimp")}
             .awards__item
                 img.awards__item-img(src="/images/brend_roku.png")
-                .awards__item-title  ПОБЕДИТЕЛЬ РЕЙТИНГА
-                    br
-                    span «ЗОЛОТАЯ ФОРТУНА»
+                .awards__item-title!{__("goldenFortune")}
             .awards__item
                 img.awards__item-img(src="/images/brend_roku.png")
                 .awards__item-title
-                    a.black-link-underline ГРАН-ПРИ
-                        br
-                        span «ВЫСШАЯ ПРОБА»
+                    a.black-link-underline!{__("higherTest")}

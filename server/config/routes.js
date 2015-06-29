@@ -22,4 +22,16 @@ module.exports = function (app, emailService) {
 
         res.render('index');
     });
+
+    app.get('/', function (req, res) {
+        var locale = req.cookies.locale;
+
+        if (locale != 'ru' && locale != 'en' && locale != 'ua') {
+            return res.redirect('/ru')
+        } else {
+            return res.redirect('/' + locale)
+        }
+
+        res.render('index');
+    });
 };
