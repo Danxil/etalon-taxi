@@ -3,12 +3,20 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
-    session = require('express-session');
+    session = require('express-session'),
+    i18n = require("i18n"),
+    path = require('path');
 
 module.exports = function (app, config) {
     function compileStylus(str, path){
         return stylus(str).set('filename', path);
     }
+
+    i18n.configure({
+        locales: ['ru', 'en', 'ua'],
+        cookie: 'locale',
+        directory: path.join(__dirname, '../../local/')
+    });
 
     app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
@@ -23,4 +31,5 @@ module.exports = function (app, config) {
         }
     ));
     app.use(express.static(config.rootPath + '/public'));
+    app.use(i18n.init);
 };

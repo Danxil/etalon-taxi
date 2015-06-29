@@ -1,5 +1,7 @@
 module.exports = function (app, emailService) {
     app.get('/partials/*', function (req, res) {
+        var locale = req.cookies.locale;
+        req.setLocale(locale);
         res.render('../../public/app/' + req.params[0]);
     });
 
@@ -8,7 +10,16 @@ module.exports = function (app, emailService) {
         res.json({success: true});
     });
 
-    app.get('/*', function (req, res) {
+    app.get('/:lang*', function (req, res) {
+        var locale = req.params.lang || req.cookies.locale;
+
+        if (locale != 'ru' && locale != 'en' && locale != 'ua') {
+            return res.redirect('/ru')
+        }
+
+        res.cookie('locale', locale);
+        req.setLocale(locale);
+
         res.render('index');
     });
 };

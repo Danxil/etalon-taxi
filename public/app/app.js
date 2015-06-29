@@ -15,11 +15,11 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     });
 
     $routeProvider
-        .when('/', {templateUrl: '/partials/main/main', controller: 'etMainCtrl'})
-        .when('/contacts', {templateUrl: '/partials/contacts/contacts', controller: 'etContactsCtrl'})
-        .when('/for-companies', {templateUrl: '/partials/for-companies/for-companies', controller: 'etForCompaniesCtrl'})
-        .when('/how-to-pay', {templateUrl: '/partials/how-to-pay/how-to-pay', controller: 'etHowToPayCtrl'})
-        .when('/auto-classes', {templateUrl: '/partials/auto-classes/auto-classes', controller: 'etAutoClassesCtrl'})
-        .when('/advantages', {templateUrl: '/partials/advantages/advantages', controller: 'etAdvantagesCtrl'})
-        .when('/services', {templateUrl: '/partials/services/services', controller: 'etServicesCtrl'})
+        .when('/:lang', {templateUrl: '/partials/main/main', controller: 'etMainCtrl'})
+        .when('/:lang/contacts', {templateUrl: '/partials/contacts/contacts', controller: 'etContactsCtrl'})
+        .when('/:lang/for-companies', {templateUrl: '/partials/for-companies/for-companies', controller: 'etForCompaniesCtrl'})
+        .when('/:lang/how-to-pay', {templateUrl: '/partials/how-to-pay/how-to-pay', controller: 'etHowToPayCtrl'})
+        .when('/:lang/auto-classes', {templateUrl: '/partials/auto-classes/auto-classes', controller: 'etAutoClassesCtrl'})
+        .when('/:lang/advantages', {templateUrl: '/partials/advantages/advantages', controller: 'etAdvantagesCtrl'})
+        .when('/:lang/services', {templateUrl: '/partials/services/services', controller: 'etServicesCtrl'})
 });
