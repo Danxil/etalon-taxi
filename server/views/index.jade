@@ -3,7 +3,7 @@ extends ../includes/layout
 block main-content
     .header
         a.login-link.yellow-link= __('menuCabinet')
-        .logo
+        a.logo(href="/#{__('locale')}")
         .header-title= __('onlineOrder')
         .contacts-panel
             .h1.text-yellow.light 808
@@ -25,17 +25,18 @@ block main-content
                 .text-yellow.h3 (044) 391-3-391
             .contacts-panel__expand-btn(ng-class="{collapse: isExpanded}", ng-click="isExpanded = !isExpanded")
         .auto-class-panel
-            div.choose-auto(data-ng-show="chooseAutoClassAvailable")
+            div.choose-auto(data-ng-show="false")
                 .auto-class-panel__choose= __('selectClassCars')
                 .auto-class-panel__items
                     .auto-class-panel__item(ng-repeat="(key, value) in autoTypes" ng-class="{active: application.autoClass == value.type}", ng-click="application.autoClass = value.type")
                         img(data-ng-src="/images/auto-{{value.type}}.png")
                         .auto-class-panel__item-title {{value.label}}
-            div.make-to-tel(data-ng-show="!chooseAutoClassAvailable")
-                p.title= __('orderThroughTel')
+            div.make-to-tel(data-ng-show="true")
+                //p.title= __('orderThroughTel')
+                p.title= __('testBanner')
 
     .sidebar
-        button.sidebar__order-btn= __('orderTaxi')
+        a.sidebar__order-btn(href="/#{__('locale')}")= __('orderTaxi')
         .sidenav
             a.white-link(href="/#{__('locale')}{{item.link}}" class="sidenav__item sidenav__item_{{item.cssClass}}" data-ng-class="{active: location == '/#{__('locale')}' + item.link || (item.link == '/' && location == '/#{__('locale')}')}" data-ng-repeat="item in menu") {{item.name['#{__('locale')}']}}
         a.sidebar__fb.white-link(href="https://www.facebook.com/pages/%D0%AD%D1%82%D0%B0%D0%BB%D0%BE%D0%BD-%D1%82%D0%B0%D0%BA%D1%81%D0%B8/1391524617843129")= __('ourFacebook')

@@ -5,7 +5,7 @@
 	"classStandartText": "If you value the efficiency and affordable price to a greater extend, we are happy to offer “Standard taxi” at your service. Price and quality ratio allows the company to provide you the most affordable taxi in Kiev with the highest level of service.<br><br>We offer reliable and advanced cars of the middle class in this segment. We have experienced, polite & neat drivers, who know the city well and are able quickly bring you to the desired destination.",
 	"classBusinessTitle": "“Business class” (Toyota Camry)",
 	"classBusinessText": "Stylish business class cars are perfect for business and corporate trips.<br><br>If your social status requires respectable look, and financial capabilities do not allow the company to keep its own fleet, Business taxi service will be the best way out of the situation.<br><br>The optimal combination of comfort and speed will make a proper impression on your business partners.",
-	"classPremiumTitle": "«Premium class» (Mercedes S-class)",
+	"classPremiumTitle": "«Premium class» (Mercedes E-class)",
 	"classPremiumText": "Solid car is a half the battle in any case, regardless of what peaks you aspire to conquer - the heart of loved ones or business partners minds.<br><br>Our «Premium» class cars have no taxi plate or special paint, that allows you confidently to position the car as your own. Trained taxi drivers with corresponding appearance and behavior can easily play the role of your personal driver.<br><br>Luxury cars will allow you to organize a meeting at the highest level, to negotiate with the important business partner or present a festive mood for yourself and the loved ones!",
 	"aboutPlacement": "About the placement",
 	"forDrivers": "For drivers",
@@ -96,7 +96,7 @@
 	"saleCard": "Sale card",
 	"cardCode": "Card code",
 	"order": "Order",
-	"ready": "Ready!",
+	"ready": "Thank you. We are happy to call you back!",
 	"error": "Error",
 	"personalDriverTitle": "Personal driver",
 	"personalDriverText": "For the men of affairs it is very important to be always on time! For people who drive around town a lot for personal or business purposes.<br><br>We offer a service of personal driver, who will accompany you all day long and wait for you in a convenient location.  <br><br>Moving around, frequent business trips, business meetings, parking in the center of the city on weekdays - ceases to be a problem, while using the services of a personal driver.",
@@ -134,5 +134,7 @@
 	"to": "to",
 	"withRate": "In accordance with a rate",
 	"costToCorporate": "The cost of services for corporate clients",
-	"kg": "kg"
+	"kg": "kg",
+    "testBanner": "We test the order through the site, while taxi service is possible on the phone - 808",
+    "forOrderTaxi": "Ordering a taxi, call"
 }

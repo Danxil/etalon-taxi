@@ -186,7 +186,8 @@ button
 
   .make-to-tel
     height 100%
-    background url(../images/how-to-pay/banner.png) center
+    //background url(../images/how-to-pay/banner.png) center
+    background url(../images/new-banner.png) center
     background-size cover
     background-repeat no-repeat
     position relative
@@ -194,7 +195,7 @@ button
     .title
       line-height 100%
       font-size 40px
-      background rgba(255, 255, 0, 0.58)
+      //background rgba(255, 255, 0, 0.58)
       position absolute
       top 0
       bottom 0
@@ -204,6 +205,13 @@ button
       width 300px
       padding-top: 66px;
       text-align center
+
+      width 100%
+      padding-left: 60px;
+      padding-right: 60px;
+      line-height: 1.5;
+      font-size: 25px;
+      padding-top 57px
 
 .auto-class-panel__choose
   @extend .h4
@@ -587,6 +595,9 @@ for flagname in 'ru' 'ua' 'gb' {
   margin-left: 30px
   overflow hidden
 
+  &.no-padd-top
+    margin-top 0
+
 .awards__item
   @extend .h5
   @extend .text-center
@@ -692,7 +703,7 @@ for flagname in 'ru' 'ua' 'gb' {
   box-sizing border-box
 
   th, td
-    border 1px solid rgba(255, 0, 0, 0.5)
+    border 1px solid borderyellow
     padding 20px 20px
     text-align center
 
@@ -700,7 +711,6 @@ for flagname in 'ru' 'ua' 'gb' {
     font-size 15px
 
   td
-    font-family OSLight
     &:first-child
       text-align left
 
