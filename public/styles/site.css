@@ -1039,3 +1039,6 @@ button {
   color: #fff !important;
   text-decoration: none !important;
 }
+.h1 {
+  text-transform: uppercase;
+}
