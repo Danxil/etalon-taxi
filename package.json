@@ -19,10 +19,17 @@
     "dart": "0.0.1",
     "express": "^4.12.3",
     "express-session": "^1.11.1",
+    "http": "0.0.0",
+    "http-post": "^0.1.1",
     "i18n": "^0.5.0",
     "jade": "^1.9.2",
-    "mailer": "^0.6.7",
     "morgan": "^1.5.2",
-    "stylus": "^0.50.0"
+    "nodemailer": "^1.4.0",
+    "nodemailer-smtp-transport": "^1.0.3",
+    "stylus": "^0.50.0",
+    "vow": "^0.4.10"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
   }
 }

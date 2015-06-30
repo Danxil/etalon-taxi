@@ -96,5 +96,7 @@
 	"saleCard": "Sale card",
 	"cardCode": "Card code",
   	"order": "Order",
-	"advantages": "Advantages"
+	"advantages": "Advantages",
+	"ready": "Ready!",
+	"error": "Error"
 }

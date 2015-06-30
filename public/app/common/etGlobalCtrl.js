@@ -1,4 +1,16 @@
-angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $document, $location) {
+angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $document, $location, sendPhone) {
+    $scope.sendPhone = {
+        send: function() {
+            sendPhone(this.number).then((function() {
+                this.success = true
+            }).bind(this), (function() {
+                this.error = true
+            }).bind(this))
+        },
+        success: false,
+        error: false
+    }
+
     $scope.autoTypes = [
         {
             type: 'standard',

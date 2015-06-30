@@ -6,8 +6,14 @@ module.exports = function (app, emailService) {
     });
 
     app.route('/api/backCall').post(function (req, res) {
-        emailService.sendEmail('Человек по имени ' + req.body.name + ' с телефоном: ' + req.body.phoneNumber + ' и email адресом: ' + req.body.email +  ' хочет зарегистрировать компанию. ', 'Обратный звонок');
-        res.json({success: true});
+        if (!req.body.phoneNumber)
+            return res.send(400);
+
+        emailService.sendEmail('Человек с телефоном: ' + req.body.phoneNumber + ' хочет вызвать такси. ', 'Обратный звонок').then(function() {
+            res.send(200);
+        }, function() {
+            res.send(500);
+        });
     });
 
     app.get('/:lang*', function (req, res) {

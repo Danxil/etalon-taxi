@@ -335,7 +335,7 @@ button {
 }
 .contacts-panel__hr {
   width: 100%;
-  height: 5px;
+  height: 1px;
   background: #fdd602;
   margin: 15px 0;
 }

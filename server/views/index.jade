@@ -11,9 +11,13 @@ block main-content
             .h3.text-yellow (044) 500-08-08
             .contacts-panel__hr
             .h5.text-white= __('enterPhone')
-            .contacts-panel__number
-                input.contacts-panel__number-placeholder(data-mask="(999) 999-99-99" placeholder="(___) ___-__-__" data-ng-model="phone")
-                .contacts-panel__send-number-btn
+            .contacts-panel__number(data-ng-show="sendPhone.error")
+                .h5.text-white= __('error')
+            .contacts-panel__number(data-ng-show="sendPhone.success")
+                .h5.text-white= __('ready')
+            .contacts-panel__number(data-ng-hide="sendPhone.success || sendPhone.error")
+                input.contacts-panel__number-placeholder(data-mask="(999) 999-99-99" placeholder="(___) ___-__-__" data-ng-model="sendPhone.number")
+                .contacts-panel__send-number-btn(data-ng-click="sendPhone.send()")
             p.contacts-panel__order-skype= __('orderThroughSkype')
             p.h5.text-white= __('allContacts')
             .contacts-panel__additional-numbers(ng-class="{expanded: isExpanded}")
