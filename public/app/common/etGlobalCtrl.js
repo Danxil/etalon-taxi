@@ -16,7 +16,7 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
 
     $scope.$on('$locationChangeSuccess', function(){
         $scope.location = $location.$$path
-        $scope.chooseAutoClassAvailable = $location.$$path == '/'
+        $scope.chooseAutoClassAvailable = $location.$$path == '/ru' || $location.$$path == '/en' || $location.$$path == '/ua'
     })
 
     $scope.application = {

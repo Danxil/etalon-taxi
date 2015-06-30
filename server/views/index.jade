@@ -33,12 +33,12 @@ block main-content
     .sidebar
         button.sidebar__order-btn= __('orderTaxi')
         .sidenav
-            a.white-link(href="/#{__('locale')}{{item.link}}" class="sidenav__item sidenav__item_{{item.cssClass}}" data-ng-class="{active: location == '/#{__('locale')}' + item.link}" data-ng-repeat="item in menu") {{item.name['#{__('locale')}']}}
-        a.sidebar__fb.white-link(href="https://www.facebook.com/pages/%D0%AD%D1%82%D0%B0%D0%BB%D0%BE%D0%BD-%D1%82%D0%B0%D0%BA%D1%81%D0%B8/1391524617843129") Наш Фейсбук
+            a.white-link(href="/#{__('locale')}{{item.link}}" class="sidenav__item sidenav__item_{{item.cssClass}}" data-ng-class="{active: location == '/#{__('locale')}' + item.link || (item.link == '/' && location == '/#{__('locale')}')}" data-ng-repeat="item in menu") {{item.name['#{__('locale')}']}}
+        a.sidebar__fb.white-link(href="https://www.facebook.com/pages/%D0%AD%D1%82%D0%B0%D0%BB%D0%BE%D0%BD-%D1%82%D0%B0%D0%BA%D1%81%D0%B8/1391524617843129")= __('ourFacebook')
         .flags
-            a.flags__ru(href="/ru/" onclick="location.reload();")
-            a.flags__ua(href="/ua/" onclick="location.reload();")
-            a.flags__gb(href="/en/" onclick="location.reload();")
+            a.flags__ru(href="/ru" target="_self")
+            a.flags__ua(href="/ua" target="_self")
+            a.flags__gb(href="/en" target="_self")
         .copyright © 2015 #{__('etalonTaxi')}
         .payment-ways
             img.payment-ways__item(src="/images/mc.png")

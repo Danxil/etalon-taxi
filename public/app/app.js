@@ -22,4 +22,5 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/:lang/auto-classes', {templateUrl: '/partials/auto-classes/auto-classes', controller: 'etAutoClassesCtrl'})
         .when('/:lang/advantages', {templateUrl: '/partials/advantages/advantages', controller: 'etAdvantagesCtrl'})
         .when('/:lang/services', {templateUrl: '/partials/services/services', controller: 'etServicesCtrl'})
+        .otherwise('/ru')
 });

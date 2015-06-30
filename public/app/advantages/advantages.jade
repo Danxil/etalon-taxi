@@ -7,12 +7,19 @@
     .they-trust
         .h1.light= __('advantages')
         .pros__items
-            .pros__item= __('personalPark')
-                br
-                a.yellow-link-underline= __('viewPhoto')
-            .pros__item= __('driversNoSmoking')
-            .pros__item= __('noBadWords')
             .pros__item
+                img.pros__item-img(src="/images/icons/white/park.png")
+                = __('personalPark')
+                br
+                a.white-link-underline= __('viewPhoto')
+            .pros__item
+                img.pros__item-img(src="/images/icons/white/no-smoking.png")
+                = __('driversNoSmoking')
+            .pros__item
+                img.pros__item-img(src="/images/icons/white/bad-word.png")
+                = __('noBadWords')
+            .pros__item
+                img.pros__item-img(src="/images/icons/white/cleaning.png")
                 a.black-link-underline= __('cleaningSalon')
     .awards
         .h1.light= __('honors')

@@ -551,14 +551,18 @@ for flagname in 'ru' 'ua' 'gb' {
   margin: 40px 0 0 40px
   overflow: hidden
 
+.pros__item-img
+  width 150px
+  display inline-block
+
 .pros__item
   @extend .h4
   @extend .text-center
   margin-right: 40px
-  background-image: url("/images/icons/yellow/car-big.png")
+  //background-image: url("/images/icons/yellow/car-big.png")
   background-position: top center
   background-repeat: no-repeat
-  padding-top: 100px
+  //padding-top: 100px
   display: inline-block
   width: 160px
   float: left
@@ -699,3 +703,11 @@ for flagname in 'ru' 'ua' 'gb' {
     font-family OSLight
     &:first-child
       text-align left
+
+.white-link-underline
+  color: #fff !important;
+  text-decoration: underline !important;
+
+.white-link-underline:hover
+  color: #fff !important;
+  text-decoration: none !important;

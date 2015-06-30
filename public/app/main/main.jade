@@ -101,12 +101,19 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
 .pros
     .h1.light= __('advantages')
     .pros__items
-        .pros__item= __('personalPark')
+        .pros__item
+            img.pros__item-img(src="/images/icons/yellow/park.png")
+            = __('personalPark')
             br
             a.yellow-link-underline= __('viewPhoto')
-        .pros__item= __('driversNoSmoking')
-        .pros__item= __('noBadWords')
         .pros__item
+            img.pros__item-img(src="/images/icons/yellow/no-smoking.png")
+            = __('driversNoSmoking')
+        .pros__item
+            img.pros__item-img(src="/images/icons/yellow/bad-word.png")
+            = __('noBadWords')
+        .pros__item
+            img.pros__item-img(src="/images/icons/yellow/cleaning.png")
             a.black-link-underline= __('cleaningSalon')
 .they-trust
     .h1.light= __('trustUs')
