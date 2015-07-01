@@ -136,5 +136,12 @@
 	"costToCorporate": "The cost of services for corporate clients",
 	"kg": "kg",
     "testBanner": "We test the order through the site, while taxi service is possible on the phone - 808",
-    "forOrderTaxi": "Ordering a taxi, call"
+    "forOrderTaxi": "Ordering a taxi, call",
+    "minCostBedroom": "The minimum cost of the bedroom area",
+    "minCostCenter": "The minimum cost of the center",
+    "flexibleTariff": "Flexible tariff",
+    "outsideKiev": "Outside Kiev",
+    "hourly": "Hourly",
+    "microbusMinimal": "Microbus minimal",
+    "microbusOutsideKiev": "Microbus outside Kiev"
 }
