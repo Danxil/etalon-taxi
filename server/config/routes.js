@@ -1,6 +1,7 @@
 module.exports = function (app, emailService) {
     app.get('/partials/*', function (req, res) {
         var locale = req.cookies.locale;
+        console.log('=======================================/partials/* is ' + locale)
         req.setLocale(locale);
         res.render('../../public/app/' + req.params[0]);
     });
