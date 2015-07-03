@@ -19,6 +19,8 @@ module.exports = function (app, emailService) {
     app.get('/:lang*', function (req, res) {
         var locale = req.params.lang || req.cookies.locale;
 
+        console.log(locale)
+
         if (locale != 'ru' && locale != 'en' && locale != 'ua') {
             return res.redirect('/ru')
         }
@@ -31,6 +33,7 @@ module.exports = function (app, emailService) {
 
     app.get('/', function (req, res) {
         var locale = req.cookies.locale;
+        console.log(locale)
 
         if (locale != 'ru' && locale != 'en' && locale != 'ua') {
             return res.redirect('/ru')
