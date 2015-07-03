@@ -22,6 +22,9 @@ module.exports = function (app, emailService) {
 
         console.log('=======================================/:lang* is ' + locale)
 
+        if (locale == 'static')
+            return
+
         if (locale != 'ru' && locale != 'en' && locale != 'ua') {
             return res.redirect('/ru')
         }

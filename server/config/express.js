@@ -30,6 +30,6 @@ module.exports = function (app, config) {
             compile: compileStylus
         }
     ));
-    app.use(express.static(config.rootPath + '/public'));
+    app.use('/static/', express.static(config.rootPath + '/public'));
     app.use(i18n.init);
 };

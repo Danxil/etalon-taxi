@@ -29,7 +29,7 @@ block main-content
                 .auto-class-panel__choose= __('selectClassCars')
                 .auto-class-panel__items
                     .auto-class-panel__item(ng-repeat="(key, value) in autoTypes" ng-class="{active: application.autoClass == value.type}", ng-click="application.autoClass = value.type")
-                        img(data-ng-src="/images/auto-{{value.type}}.png")
+                        img(data-ng-src="/static/images/auto-{{value.type}}.png")
                         .auto-class-panel__item-title {{value.label}}
             div.make-to-tel(data-ng-show="true")
                 //p.title= __('orderThroughTel')
@@ -46,7 +46,7 @@ block main-content
             a.flags__gb(href="/en" target="_self")
         .copyright © 2015 #{__('etalonTaxi')}
         .payment-ways
-            img.payment-ways__item(src="/images/mc.png")
-            img.payment-ways__item(src="/images/visa.png")
+            img.payment-ways__item(src="/static/images/mc.png")
+            img.payment-ways__item(src="/static/images/visa.png")
             .payment-ways__text= __('payWithCard')
     .main(ng-view)

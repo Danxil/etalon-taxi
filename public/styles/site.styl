@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: OSSemiBold;
-  src: url('../fonts/OpenSans-Semibold.ttf') format("truetype");
+  src: url('/static/fonts/OpenSans-Semibold.ttf') format("truetype");
 }
 @font-face {
   font-family: OSBold;
-  src: url('../fonts/OpenSans-Bold.ttf') format("truetype");
+  src: url('/static/fonts/OpenSans-Bold.ttf') format("truetype");
 }
 @font-face {
   font-family: OSExtraBold;
-  src: url('../fonts/OpenSans-ExtraBold.ttf') format("truetype");
+  src: url('/static/fonts/OpenSans-ExtraBold.ttf') format("truetype");
 }
 @font-face {
   font-family: OSLight;
-  src: url('../fonts/OpenSans-Light.ttf') format("truetype");
+  src: url('/static/fonts/OpenSans-Light.ttf') format("truetype");
 }
 
 *
@@ -50,7 +50,7 @@ button
 .header
   width: 100%
   background-color #000000
-  background-image: url("../images/header_bg.png")
+  background-image: url("/static/images/header_bg.png")
   background-size 88%
   min-height 530px
   overflow: hidden
@@ -60,7 +60,7 @@ button
 
 .login-link
   @extend .h5
-  icon-bg('../images/icons/yellow/cabinet.png')
+  icon-bg('/static/images/icons/yellow/cabinet.png')
   margin 25px 0 0 40px
 
 .logo
@@ -69,7 +69,7 @@ button
   margin-left -157px
   width: 313px
   height: 103px
-  background-image: url("../images/logo.png")
+  background-image: url("/static/images/logo.png")
   top: 70px
 
 .header-title
@@ -133,7 +133,7 @@ button
   border none
 
 .contacts-panel__send-number-btn
-  background-image: url("../images/arrow-yellow.png")
+  background-image: url("/static/images/arrow-yellow.png")
   transform rotate(90deg)
   width: 27px
   height: 15px
@@ -146,10 +146,10 @@ button
   @extend .text-white
   @extend .h5
   @extend .text-left
-  icon-bg('../images/skype.png')
+  icon-bg('/static/images/skype.png')
 
 .contacts-panel__expand-btn
-  background-image: url("../images/arrow-yellow.png")
+  background-image: url("/static/images/arrow-yellow.png")
   transform rotate(180deg)
   width: 27px
   height: 15px
@@ -186,8 +186,8 @@ button
 
   .make-to-tel
     height 100%
-    //background url(../images/how-to-pay/banner.png) center
-    background url(../images/new-banner.png) center
+    //background url(/static/images/how-to-pay/banner.png) center
+    background url('/static/images/new-banner.png') center
     background-size cover
     background-repeat no-repeat
     position relative
@@ -216,7 +216,7 @@ button
 .auto-class-panel__choose
   @extend .h4
   @extend .text-white
-  icon-bg('../images/icons/white/auto-classes.png');
+  icon-bg('/static/images/icons/white/auto-classes.png');
   margin-left: 170px
 
 .auto-class-panel__items
@@ -233,7 +233,7 @@ button
 
   &:before
     background-size: contain;
-    background-image url(../images/icons/circle.png)
+    background-image url(/static/images/icons/circle.png)
     background-repeat no-repeat
     content ''
     width 175px
@@ -297,24 +297,24 @@ button
 
 for itemname in 'home' 'services' 'how-to-pay' 'for-corps' 'pros' 'auto-classes' 'contacts' {
   .sidenav__item_{itemname} {
-    icon-bg('../images/icons/white/' + itemname + '.png');
+    icon-bg('/static/images/icons/white/' + itemname + '.png');
   }
   .sidenav__item_{itemname}:hover, .sidenav__item_{itemname}.active {
-    icon-bg('../images/icons/yellow/' + itemname + '.png')
+    icon-bg('/static/images/icons/yellow/' + itemname + '.png')
   }
 }
 
 .sidebar__fb
   @extend .h4
   margin-top: 20px
-  icon-bg('../images/facebook.png')
+  icon-bg('/static/images/facebook.png')
 
 .flags
   margin-top: 60px
 
 for flagname in 'ru' 'ua' 'gb' {
   .flags__{flagname} {
-    url = '../images/flag_' + flagname + '.png'
+    url = '/static/images/flag_' + flagname + '.png'
     margin-right: 20px
     height: 30px
     width: 43px
@@ -374,7 +374,7 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form__wherefrom-title, .order-form__whereto-title
   @extend .h4
-  icon-bg('../images/icons/black/cabinet.png');
+  icon-bg('/static/images/icons/black/cabinet.png');
   display: inline-block
 
 .order-form__wherefrom-inputs, .order-form__whereto-inputs
@@ -416,7 +416,7 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form__additional-requirements-button:after
   content ''
-  background-image: url("../images/triangle-black.png")
+  background-image: url("/static/images/triangle-black.png")
   background-repeat no-repeat
   width: 17px
   height: 9px
@@ -460,7 +460,7 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form-phone-title
   @extend .h4
-  icon-bg('../images/icons/black/cabinet.png');
+  icon-bg('/static/images/icons/black/cabinet.png');
   display: inline-block
   margin-top: 20px
 
@@ -478,7 +478,7 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form__cost-title
   @extend .h4
-  icon-bg('../images/icons/black/cabinet.png');
+  icon-bg('/static/images/icons/black/cabinet.png');
   display: inline-block
 
 .order-form__cost-after
@@ -496,7 +496,7 @@ for flagname in 'ru' 'ua' 'gb' {
   @extend .text-white
   @extend .text-center
   display: inline-block
-  background-image: url("../images/counter-num.png")
+  background-image: url("/static/images/counter-num.png")
   width: 46px
   height: 74px
   margin-right: 10px
@@ -521,7 +521,7 @@ for flagname in 'ru' 'ua' 'gb' {
 .order-form__order-btn
   @extend .h2
   padding 10px 15px
-  background-image: url("../images/button.png")
+  background-image: url("/static/images/button.png")
   margin-top: 20px
   width: 254px
   height: 64px
