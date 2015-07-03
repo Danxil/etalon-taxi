@@ -1,0 +1,217 @@
+@import vars
+
+@font-face {
+  font-family: OSSemiBold;
+  src: url('/static/fonts/OpenSans-Semibold.ttf') format("truetype");
+}
+@font-face {
+  font-family: OSBold;
+  src: url('/static/fonts/OpenSans-Bold.ttf') format("truetype");
+}
+@font-face {
+  font-family: OSExtraBold;
+  src: url('/static/fonts/OpenSans-ExtraBold.ttf') format("truetype");
+}
+@font-face {
+  font-family: OSLight;
+  src: url('/static/fonts/OpenSans-Light.ttf') format("truetype");
+}
+
+*
+  font-family: OSSemiBold
+  outline none
+  color #000000
+
+a, button
+  cursor: pointer
+
+a
+  color black !important
+  text-decoration none !important
+
+a:hover
+  color black !important
+  text-decoration: underline !important
+
+html
+  height: 100%
+body
+  min-height: 100%
+  position: relative
+
+.sidebar__order-btn
+  @extend .h4
+  @extend .text-center
+  background-color: hotyellow
+  border-radius 3px
+  width: 200px
+  padding 15px
+  transition 1s
+
+.choose-date
+  float right
+  margin-top: 13px;
+
+input.yellow
+  background yellow
+  width 100px
+  border 0
+  border-radius 3px
+  text-align center
+  margin 0 10px
+
+.header-title
+  @extend .h2
+  @extend .bold
+  letter-spacing 7pt
+  display inline-block
+
+.header
+  background yellow
+
+  .table
+    display table
+    width 100%
+
+    .cell
+      display table-cell
+      font-size 11pt
+      padding 10px 30px
+      vertical-align top
+
+      .img
+        height 50px
+        margin-right 20px
+
+      .link
+        margin-top 8px
+        float right
+        cursor pointer
+
+        .img
+          float right
+          height 30px
+
+      .text
+        color #000
+
+.content
+  width 100%
+  display table
+  font-size 0
+
+  .logo
+    width 250px
+
+  .side
+    display table-cell
+    font-size 12pt
+
+    > .shell
+      min-height 1024px
+
+    &.left
+      padding 0 20px
+
+      .sidebar__order-btn
+        margin-left 10px
+        margin-top 20px
+        display inline-block
+
+      .menu
+        padding-left 10px
+
+        .item
+          display block
+          margin-top 20px
+
+          &:first-child
+            margin-top 0
+
+          .link
+            color #fff !important
+            font-size 13pt
+
+            &:hover
+              text-decoration none !important
+              color yellow !important
+
+    &.right
+      padding 40px 60px
+
+.history
+  margin-top 40px
+
+  ul.order-list
+    padding-left 0
+    .item
+      margin-top 20px
+
+      &:first-child
+        margin-top 0
+
+      > .shell
+        border-radius 10px
+        border 3px yellow solid
+
+      .shell
+        .table
+          font-size 0
+          margin 20px 0
+          width 100%
+
+          .cell
+            display table-cell
+            padding 0 20px
+            font-size 11pt
+            border-left 3px solid yellow
+
+            p
+              &:first-child
+                margin-top 0
+
+              &:last-child
+                margin-bottom 0
+
+            &:nth-child(1)
+              border-left 0
+              .shell
+                width 150px
+
+            &:nth-child(2)
+              .shell
+                width 200px
+
+            .label-string
+              color #a3a3a3
+
+            .value-string
+              color #000
+
+        .bottom-line
+          background yellow
+          width 100%
+
+          .table
+            margin 0
+
+          .cell
+            padding 10px 20px
+
+          .img
+            display inline-block
+            width 30px
+            margin-right 10px
+
+          .text
+            color #000
+
+              .link
+                text-decoration underline !important
+
+
+.side
+  &.left
+    background #000
+  &.right
+    background #fff

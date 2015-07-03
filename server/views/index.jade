@@ -2,7 +2,7 @@ extends ../includes/layout
 
 block main-content
     .header
-        a.login-link.yellow-link= __('menuCabinet')
+        a.login-link.yellow-link(href="/cabinet" target="_self")= __('menuCabinet')
         a.logo(href="/#{__('locale')}")
         .header-title= __('onlineOrder')
         .contacts-panel

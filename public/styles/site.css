@@ -17,7 +17,7 @@
 .auto-class-panel__choose,
 .auto-class-panel__item.active img,
 .auto-class-panel__item-title,
-.sidebar__order-btn,
+.header-title,
 .sidenav__item,
 .sidebar__fb,
 .copyright,
@@ -138,7 +138,6 @@
 .header-title,
 .contacts-panel,
 .auto-class-panel__item,
-.sidebar__order-btn,
 .order-form__left-side-inner,
 .order-form__additional-requirements-button,
 .order-form__counter-digit,
@@ -510,14 +509,14 @@ button {
   bottom: 0;
   padding-left: 40px;
 }
-.sidebar__order-btn {
+.header-title {
   background-color: #fdd602;
   border-radius: 3px;
   width: 200px;
   padding: 15px;
   transition: 1s;
 }
-.sidebar__order-btn:hover {
+.header-title:hover {
   transform: scale(1.1);
 }
 .sidenav {

@@ -9,6 +9,7 @@ var express = require('express'),
 
 module.exports = function (app, config) {
     function compileStylus(str, path){
+        console.log(1111111111111)
         return stylus(str).set('filename', path);
     }
 
@@ -24,12 +25,14 @@ module.exports = function (app, config) {
     app.use(cookieParser());
     app.use(bodyParser());
     app.use(session({secret: 'lionheart vs dark knight', saveUninitialized: true}));
+
     app.use(stylus.middleware(
         {
-            src: config.rootPath + '/public',
+            src: config.rootPath + 'public',
             compile: compileStylus
         }
     ));
+    app.use(express.static(config.rootPath + '/public'));
     app.use('/static/', express.static(config.rootPath + '/public'));
     app.use(i18n.init);
 };

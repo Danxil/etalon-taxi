@@ -1,9 +1,16 @@
 module.exports = function (app, emailService) {
+    app.get('/cabinet', function (req, res) {
+        res.render('cabinet');
+    });
+
     app.get('/partials/*', function (req, res) {
         var locale = req.cookies.locale;
-        console.log('=======================================/partials/* is ' + locale)
         req.setLocale(locale);
         res.render('../../public/app/' + req.params[0]);
+    });
+
+    app.get('/cabinet-partials/*', function (req, res) {
+        res.render('../../public/cabinet/' + req.params[0]);
     });
 
     app.route('/api/backCall').post(function (req, res) {
@@ -20,8 +27,6 @@ module.exports = function (app, emailService) {
     app.get('/:lang*', function (req, res) {
         var locale = req.params.lang || req.cookies.locale;
 
-        console.log('=======================================/:lang* is ' + locale)
-
         if (locale == 'static')
             return
 
@@ -37,7 +42,6 @@ module.exports = function (app, emailService) {
 
     app.get('/', function (req, res) {
         var locale = req.cookies.locale;
-        console.log('=======================================/ is ' + locale)
 
         if (locale != 'ru' && locale != 'en' && locale != 'ua') {
             return res.redirect('/ru')

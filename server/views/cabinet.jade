@@ -1,0 +1,197 @@
+extends ../includes/cabinet-layout
+
+block main-content
+    .header
+        .table
+            .cell
+                img.img(src="/static/images/icons/logo_company.png")
+                span.text Здравствуйте, компания Майкрософт
+            .cell
+                img.img(src="/static/images/icons/pig.png")
+                span.text Баланс: 123 333, 54 гривен
+            .cell
+                img.img(src="/static/images/icons/car.png")
+                span.text Поездок за 7 дней
+            .cell
+                .link
+                    img.img(src="/static/images/icons/log_in.png")
+    .content
+        .left.side
+            .shell
+                img.logo(src="/static/images/logo.png")
+                ul.menu
+                    li.item
+                        a.link История поездок
+                    li.item
+                        a.link Активные заказы
+                    li.item
+                        a.link Предварительные заказы
+                    li.item
+                        a.link Реквизиты компании
+                a.sidebar__order-btn(href="") Заказать такси
+        .right.side
+            .shell
+                p Добро пожаловать в кабинет корпоративного заказчика!
+                p Эту строку можно использовать для новостей, уведомлений и предупреждений клиентам!
+                p Спасибо за Ваше понимание
+                .history
+                    .header-title История поездок
+                    .choose-date
+                        span Выбор периода: с
+                        input.yellow(value="12/04/2015")
+                        span до
+                        input.yellow(value="12/04/2015")
+                    ul.order-list
+                        .item
+                            .shell
+                                .table
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string № Заказа:&nbsp;
+                                                span.value-string 20111
+                                            p
+                                                span.label-string Время:&nbsp;
+                                                span.value-string 12:20
+                                            p
+                                                span.label-string Дата:&nbsp;
+                                                span.value-string 15/04/2015
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Телефон:&nbsp;
+                                                span.value-string (097) 212 21 21
+                                            p
+                                                span.label-string Пассажир:&nbsp;
+                                                span.value-string Викентий
+                                            p
+                                                span.label-string Время подачи:&nbsp;
+                                                span.value-string 13:00
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Откуда:&nbsp;
+                                                span.value-string Ужвий Наталии ул., д.7
+                                            p
+                                                span.label-string Куда:&nbsp;
+                                                span.value-string Оболонский просп., д.40
+                                            p
+                                                span.label-string Остановить возле ларька "Хлеб":&nbsp;
+                                                span.value-string (097) 212 21 21
+                                .bottom-line
+                                    .table
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/ok.png")
+                                                span.text Выполнено
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/coins.png")
+                                                span.text 57,03
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/person.png")
+                                                span.text Рома Иванов&nbsp;
+                                                    span.link (детальней)
+                        .item
+                            .shell
+                                .table
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string № Заказа:&nbsp;
+                                                span.value-string 20111
+                                            p
+                                                span.label-string Время:&nbsp;
+                                                span.value-string 12:20
+                                            p
+                                                span.label-string Дата:&nbsp;
+                                                span.value-string 15/04/2015
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Телефон:&nbsp;
+                                                span.value-string (097) 212 21 21
+                                            p
+                                                span.label-string Пассажир:&nbsp;
+                                                span.value-string Викентий
+                                            p
+                                                span.label-string Время подачи:&nbsp;
+                                                span.value-string 13:00
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Откуда:&nbsp;
+                                                span.value-string Ужвий Наталии ул., д.7
+                                            p
+                                                span.label-string Куда:&nbsp;
+                                                span.value-string Оболонский просп., д.40
+                                            p
+                                                span.label-string Остановить возле ларька "Хлеб":&nbsp;
+                                                span.value-string (097) 212 21 21
+                                .bottom-line
+                                    .table
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/ok.png")
+                                                span.text Выполнено
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/coins.png")
+                                                span.text 57,03
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/person.png")
+                                                span.text Рома Иванов&nbsp;
+                                                    span.link (детальней)
+                        .item
+                            .shell
+                                .table
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string № Заказа:&nbsp;
+                                                span.value-string 20111
+                                            p
+                                                span.label-string Время:&nbsp;
+                                                span.value-string 12:20
+                                            p
+                                                span.label-string Дата:&nbsp;
+                                                span.value-string 15/04/2015
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Телефон:&nbsp;
+                                                span.value-string (097) 212 21 21
+                                            p
+                                                span.label-string Пассажир:&nbsp;
+                                                span.value-string Викентий
+                                            p
+                                                span.label-string Время подачи:&nbsp;
+                                                span.value-string 13:00
+                                    .cell
+                                        .shell
+                                            p
+                                                span.label-string Откуда:&nbsp;
+                                                span.value-string Ужвий Наталии ул., д.7
+                                            p
+                                                span.label-string Куда:&nbsp;
+                                                span.value-string Оболонский просп., д.40
+                                            p
+                                                span.label-string Остановить возле ларька "Хлеб":&nbsp;
+                                                span.value-string (097) 212 21 21
+                                .bottom-line
+                                    .table
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/ok.png")
+                                                span.text Выполнено
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/coins.png")
+                                                span.text 57,03
+                                        .cell
+                                            .shell
+                                                img.img(src="/static/images/icons/person.png")
+                                                span.text Рома Иванов&nbsp;
+                                                    span.link (детальней)
