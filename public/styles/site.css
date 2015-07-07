@@ -510,13 +510,16 @@ button {
   padding-left: 40px;
 }
 .header-title {
+  font-size: 24pt !important;
+}
+.sidebar__order-btn {
   background-color: #fdd602;
   border-radius: 3px;
   width: 200px;
   padding: 15px;
   transition: 1s;
 }
-.header-title:hover {
+.sidebar__order-btn:hover {
   transform: scale(1.1);
 }
 .sidenav {
