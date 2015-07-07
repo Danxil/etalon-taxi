@@ -287,6 +287,8 @@ button
   width: 200px
   padding 15px
   transition 1s
+  display inline-block
+  text-align center
 
   &:hover
     transform scale(1.1)
@@ -377,7 +379,14 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form__wherefrom-title, .order-form__whereto-title
   @extend .h4
-  icon-bg('/static/images/icons/black/cabinet.png');
+  display: inline-block
+
+.order-form__wherefrom-title
+  icon-bg('/static/images/icons/point-a.png');
+  display: inline-block
+
+.order-form__whereto-title
+  icon-bg('/static/images/icons/point-b.png');
   display: inline-block
 
 .order-form__wherefrom-inputs, .order-form__whereto-inputs

@@ -518,6 +518,8 @@ button {
   width: 200px;
   padding: 15px;
   transition: 1s;
+  display: inline-block;
+  text-align: center;
 }
 .sidebar__order-btn:hover {
   transform: scale(1.1);
@@ -710,7 +712,18 @@ button {
 }
 .order-form__wherefrom-title,
 .order-form__whereto-title {
-  background-image: url("/static/images/icons/black/cabinet.png");
+  display: inline-block;
+}
+.order-form__wherefrom-title {
+  background-image: url("/static/images/icons/point-a.png");
+  background-size: 32px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 45px;
+  display: block;
+  display: inline-block;
+}
+.order-form__whereto-title {
+  background-image: url("/static/images/icons/point-b.png");
   background-size: 32px;
   background-repeat: no-repeat;
   padding: 5px 0 5px 45px;
