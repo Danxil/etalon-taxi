@@ -10,7 +10,9 @@ module.exports = {
         emailHost: 'smtp.mandrillapp.com',
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
-        managerEmail: 'danxil@list.ru'
+        managerEmail: 'danxil@list.ru',
+        soapUrl: 'http://taxi.intelserv.com/YTaxiSOAP/YTxWebService.asmx?WSDL',
+        soapProvider: '00000000-0000-0000-0000-000000000115'
     },
     production: {
         rootPath: rootPath,
@@ -20,6 +22,8 @@ module.exports = {
         emailHost: 'smtp.mandrillapp.com',
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
-        managerEmail: 'artem@likefor.org'
+        managerEmail: 'artem@likefor.org',
+        soapUrl: 'http://taxi.intelserv.com/YTaxiSOAP/YTxWebService.asmx?WSDL',
+        soapProvider: '00000000-0000-0000-0000-000000000115'
     }
 };

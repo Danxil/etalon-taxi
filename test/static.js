@@ -1,7 +1,7 @@
 var request = require('request');
 
 var options = {
-    proxy: process.env.QUOTAGUARDSTATIC_URL,
+    //proxy: process.env.QUOTAGUARDSTATIC_URL,
     url: 'https://api.github.com/repos/joyent/node',
     headers: {
         'User-Agent': 'node.js'
