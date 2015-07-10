@@ -4,82 +4,87 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
         .order-form__left-side-inner
             .order-form__wherefrom-title= __('whereSubmitCar')
             .order-form__wherefrom-inputs
-                input.order-form__wherefrom-street(placeholder="#{__('namePointPlaceholder')}", type="text", ng-model="application.from.address", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
-                input.order-form__whereto-house(type="text", ng-model="whereToHouse", placeholder="#{__('numberHouse')}", ng-disabled="withoutFinalPoint" typeahead="state for state in regions | filter:$viewValue | limitTo:8")
-            div.to-point(data-ng-repeat="item in application.to")
+                input.order-form__wherefrom-street(placeholder="#{__('namePointPlaceholder')}", type="text", ng-model="application.StreetName", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                input.order-form__whereto-house(type="text", ng-model="application.House", placeholder="#{__('numberHouse')}",)
+            div.to-point(data-ng-repeat="item in application.OrderPoints")
                 .order-form__whereto-title= __('destinationPoint')
                 .order-form__whereto-inputs
-                    input.order-form__whereto-street(placeholder="#{__('namePointPlaceholder')}" type="text", ng-model="item.address", ng-disabled="withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
-                    input.order-form__whereto-house(type="text", ng-model="whereToHouse", placeholder="#{__('numberHouse')}", ng-disabled="withoutFinalPoint" typeahead="state for state in regions | filter:$viewValue | limitTo:8")
-            button.add-new-pint(ng-disabled="withoutFinalPoint" data-ng-click="addNewPoint()") +
+                    input.order-form__whereto-street(placeholder="#{__('namePointPlaceholder')}" type="text", data-ng-init="item.Number = $index + 1" ng-model="item.StreetName", ng-disabled="application.withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
+                    input.order-form__whereto-house(type="text", ng-model="item.House", placeholder="#{__('numberHouse')}", ng-disabled="application.withoutFinalPoint")
+            button.add-new-pint(ng-disabled="application.withoutFinalPoint" data-ng-click="addNewPoint()") +
             .order-form__without-final
-                input(type="checkbox", id="withoutFinalPoint", ng-model="withoutFinalPoint")
-                label(for="withoutFinalPoint")= __('tripWtihoutDestination')
+                input(type="checkbox", id="application.withoutFinalPoint", ng-model="application.withoutFinalPoint")
+                label(for="application.withoutFinalPoint")= __('tripWtihoutDestination')
             .order-form__additional-requirements
                 button.order-form__additional-requirements-button(ng-class="{expanded: additionalRequirementsExpanded}", ng-click="additionalRequirementsExpanded = !additionalRequirementsExpanded")= __('listAdditionalServices')
                 .order-form__additional-requirements-list(ng-class="{expanded: additionalRequirementsExpanded}")
                     .col-md-6
                         .order-form__additional-requirements-side-title= __('driverAndCar')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_exp10", ng-model="additionalRequirements.exp10")
+                            input(type="checkbox", id="additionalRequirements_exp10", ng-model="add1")
                             label(for="additionalRequirements_exp10")= __('experience10')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_eng", ng-model="additionalRequirements.eng")
+                            input(type="checkbox", id="additionalRequirements_eng", ng-model="add2" ng-change="toggleOrderType(15)")
                             label(for="additionalRequirements_eng")= __('speakEnglish')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
-                            label(for="additionalRequirements_truck")= __('freightCar')
+                            input(type="radio", id="freightCar", ng-model="application.CarClass" value="9")
+                            label(for="freightCar")
+                            label(for="freightCar")= __('freightCar')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
-                            label(for="additionalRequirements_truck")= __('econom')
+                            input(type="radio", id="econom", ng-model="application.CarClass" value="1")
+                            label(for="econom")
+                            label(for="econom")= __('econom')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
-                            label(for="additionalRequirements_truck")= __('comfort')
+                            input(type="radio", id="comfort", ng-model="application.CarClass" value="2")
+                            label(for="comfort")
+                            label(for="comfort")= __('comfort')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_truck", ng-model="additionalRequirements.truck")
-                            label(for="additionalRequirements_truck")= __('limusin')
+                            input(type="radio", id="limusin", ng-model="application.CarClass" value="6")
+                            label(for="limusin")
+                            label(for="limusin")= __('limusin')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_manypeople", ng-model="additionalRequirements.manypeople")
-                            label(for="additionalRequirements_manypeople")= __('manyMans')
+                            input(type="radio", id="manyMans", ng-model="application.CarClass" value="7")
+                            label(for="manyMans")
+                            label(for="manyMans")= __('manyMans')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_smoking", ng-model="additionalRequirements.smoking")
+                            input(type="checkbox", id="additionalRequirements_smoking", ng-model="add3" ng-change="toggleOrderType(2)")
                             label(for="additionalRequirements_smoking")= __('canBeSmoke')
                     .col-md-6
                         .order-form__additional-requirements-side-title= __('services')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_cardpayment", ng-model="additionalRequirements.cardpayment")
+                            input(type="checkbox", id="additionalRequirements_cardpayment", ng-model="application.PayType" value="1")
                             label(for="additionalRequirements_cardpayment")= __('payCard')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_child", ng-model="additionalRequirements.child")
+                            input(type="checkbox", id="additionalRequirements_child", ng-model="add4" ng-change="toggleOrderType(9)")
                             label(for="additionalRequirements_child")= __('babySeat')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_animals", ng-model="additionalRequirements.animals")
+                            input(type="checkbox", id="additionalRequirements_animals", ng-model="add5" ng-change="toggleOrderType(11)")
                             label(for="additionalRequirements_animals")= __('transportationOfPets')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_nameplate", ng-model="additionalRequirements.nameplate")
+                            input(type="checkbox", id="additionalRequirements_nameplate", ng-model="add6" ng-change="toggleOrderType(3)")
                             label(for="additionalRequirements_nameplate")= __('meetingWithTheBoard')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_courier", ng-model="additionalRequirements.courier")
+                            input(type="checkbox", id="additionalRequirements_courier", ng-model="add7" ng-change="toggleOrderType(7)")
                             label(for="additionalRequirements_courier")= __('courier')
                         .order-form__additional-requrement
-                            input(type="checkbox", id="additionalRequirements_driver", ng-model="additionalRequirements.driver")
+                            input(type="checkbox", id="additionalRequirements_driver", ng-model="add7" ng-change="toggleOrderType(3)")
                             label(for="additionalRequirements_driver")= __('driver')
-            .order-form-phone-title(ng-show="toShowNumber()") Ваш номер телефона
+            .order-form-phone-title(ng-show="toShowNumber") Ваш номер телефона
             .order-form__phone-container
-                input.order-form__phone(type="text", ng-model="phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber()")
+                input.order-form__phone(type="text", ng-model="application.Client.Phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber")
     .order-form__right-side
         .order-form__cost-title= __('tripCost')
-        .order-form__cost-after(ng-show="withoutFinalPoint")= __('costAfterTrip')
-        .order-form__counter(ng-show="!withoutFinalPoint")
-            .order-form__counter-digit {{price.firstDigit}}
-            .order-form__counter-digit {{price.secondDigit}}
-            .order-form__counter-digit {{price.thirdDigit}}
+        .order-form__cost-after(ng-show="application.withoutFinalPoint")= __('costAfterTrip')
+        .order-form__counter(ng-show="!application.withoutFinalPoint")
+            .order-form__counter-digit {{orderData.price[orderData.price.length - 3] || 0}}
+            .order-form__counter-digit {{orderData.price[orderData.price.length - 2] || 0}}
+            .order-form__counter-digit {{orderData.price[orderData.price.length - 1] || 0}}
             .order-form__counter-text= __('grivnas')
         .order-form__corporate(ng-show="!haveACard")
             input(type="checkbox", id="isCorporate", ng-model="isCorporate")
             label(for="isCorporate")= __('iAmEnterprise')
         div(ng-show="isCorporate")
-            input(type="text", placeholder="#{__('youCashlessCode')}").order-form__cashless-code
+            input(type="text", ng-model="application.NonCashCardNum", placeholder="#{__('youCashlessCode')}").order-form__cashless-code
             div.order-form__corporate
                 input(type="checkbox", id="isVoucher", ng-model="isVoucher")
                 label(for="isVoucher") #{__('voucher')}, #{__('lastName')}
@@ -92,7 +97,7 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
             input(type="checkbox", id="haveACard", ng-model="haveACard")
             label(for="haveACard") #{__('saleCard')}
         div(ng-show="haveACard")
-            input(type="text", placeholder="#{__('cardCode')}").order-form__card-code
+            input(type="text", placeholder="#{__('cardCode')}" ng-model="application.LoyalCardNum").order-form__card-code
         button.order-form__order-btn(ng-click="order()")= __('order')
         .order-form__payment-methods
             img.order-form__payment-methods-img(src="/static/images/mc.png")

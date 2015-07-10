@@ -213,7 +213,8 @@
 .order-form__card-code:-ms-input-placeholder {
   color: #a5a5a5 !important;
 }
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] + label {
   width: 21px;
   height: 21px;
   display: inline-block;
@@ -229,10 +230,17 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   cursor: pointer;
 }
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked,
+input[type="radio"]:checked + label {
   background-image: url("../images/checkbox.png");
   background-repeat: no-repeat;
   background-position: center center;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  margin: 0 10px -4px 0;
 }
 .green-btn,
 .order-form__order-with-card-btn,
@@ -847,6 +855,7 @@ button {
   width: 46px;
   height: 74px;
   margin-right: 10px;
+  vertical-align: top;
 }
 .order-form__counter-text {
   display: inline-block;

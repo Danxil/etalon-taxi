@@ -6,13 +6,14 @@ describe('soap', function () {
         soap.createClient(url, function(err, client) {
             var args = {
                 provider: '00000000-0000-0000-0000-000000000115',
+                /*
                 request: {
                     Command: 'RegistersQuery',
                     Requested: [
                         'Streets'
                     ]
                 }
-                /*
+
                 request: {
                     Command: 'OrderCalculateOnly',
                     OrderInfo: {
@@ -43,7 +44,7 @@ describe('soap', function () {
                 */
             }
             args.request = JSON.stringify(args.request)
-            console.log(args)
+
             client.Execute(args, function(err, result) {
                 console.log(err);
                 console.log(result);

@@ -121,7 +121,8 @@ placeholder-color(color)
   border-radius 3px
   width: 100%
 
-input[type="checkbox"]
+input[type="checkbox"],
+input[type="radio"] + label
   width: 21px
   height: 21px
   display: inline-block
@@ -136,11 +137,17 @@ input[type="checkbox"]
   -webkit-appearance:none;
   cursor: pointer
 
-input[type="checkbox"]:checked
+input[type="checkbox"]:checked,
+input[type="radio"]:checked  + label
   background-image: url("../images/checkbox.png")
   background-repeat no-repeat
   background-position center center
 
+input[type="radio"]
+  display none
+
+input[type="radio"] + label
+  margin: 0 10px -4px 0;
 
 .green-btn
   @extend .h4

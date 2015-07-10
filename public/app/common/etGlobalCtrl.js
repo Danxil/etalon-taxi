@@ -31,23 +31,6 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
         $scope.chooseAutoClassAvailable = $location.$$path == '/ru' || $location.$$path == '/en' || $location.$$path == '/ua'
     })
 
-    $scope.application = {
-        autoClass: $scope.autoTypes[0].type,
-        from: {
-
-        },
-        to: [
-            {
-
-            }
-        ]
-    }
-
-
-    $scope.addNewPoint = function () {
-        $scope.application.to.push({})
-    }
-
     $scope.menu = [
         {
             name: {

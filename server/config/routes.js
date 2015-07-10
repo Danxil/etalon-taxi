@@ -16,6 +16,18 @@ module.exports = function (app, emailService, soapClient) {
         })
     });
 
+    app.route('/api/order-calculate-only').post(function (req, res) {
+        soapClient.execute('OrderCalculateOnly', req.body).then(function(response) {
+            res.send(response)
+        })
+    });
+
+    app.route('/api/add-new-order').post(function (req, res) {
+        soapClient.execute('AddNewOrder', req.body).then(function(response) {
+            res.send(response)
+        })
+    });
+
     app.get('/cabinet', function (req, res) {
         res.render('cabinet');
     });

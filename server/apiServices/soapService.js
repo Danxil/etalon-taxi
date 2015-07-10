@@ -14,8 +14,20 @@ module.exports = function(config) {
 
                 break;
             }
-        }
+            case 'OrderCalculateOnly': {
+                request.OrderInfo = options
+                request.OrderInfo.TownName = 'Киев'
 
+                break;
+            }
+            case 'AddNewOrder': {
+                request.OrderInfo = options
+                request.OrderInfo.TownName = 'Киев'
+
+                break;
+            }
+        }
+        console.log(request)
         return JSON.stringify(request)
     }
 
@@ -25,6 +37,14 @@ module.exports = function(config) {
         switch (method) {
             case 'RegistersQuery': {
                 response = _.union(response['Streets'], response['ObjectPlaces'])
+
+                break;
+            }
+            case 'OrderCalculateOnly': {
+
+                break;
+            }
+            case 'AddNewOrder': {
 
                 break;
             }
