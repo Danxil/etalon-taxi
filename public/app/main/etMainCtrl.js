@@ -28,14 +28,24 @@ angular.module('app').controller('etMainCtrl', function ($scope, $http, soapApi,
 
     function toShowNumberFn () {
         var whereTo = _.filter($scope.application.OrderPoints, function(item) {
-            return item.StreetName && item.House
+            return item.StreetName && item.House && $scope.regions.indexOf(item.StreetName) != -1
         })
 
-        return $scope.toShowNumber = ($scope.application.StreetName && $scope.application.House) && ($scope.application.withoutFinalPoint || whereTo.length)
+        var whereFrom = $scope.application.StreetName && $scope.application.House &&
+                $scope.regions.indexOf($scope.application.StreetName) != -1
+
+        return $scope.toShowNumber = whereFrom && ($scope.application.withoutFinalPoint || whereTo.length)
     }
 
     $scope.addNewPoint = function () {
         $scope.application.OrderPoints.push({})
+    }
+
+    $scope.cancelOrder = function () {
+        $rootScope.loading.cancelOrder = true
+        soapApi.orderClientRejection({id: $rootScope.orderSuccess.orderId}).then(function(resopnse) {
+            $rootScope.loading.cancelOrder = false
+        })
     }
 
     $scope.order = function () {
@@ -47,15 +57,18 @@ angular.module('app').controller('etMainCtrl', function ($scope, $http, soapApi,
         soapApi.addNewOrder(createOrderInfo()).then(function(response) {
             (function checkStatus(id) {
                 soapApi.orderStatusQuery({id: id}).then(function(resopnse) {
-                    if (resopnse.data.Status != 'CarOnRoad') {
+                    if (resopnse.data.Status != 'CarOnRoad' && resopnse.data.Status != 'Cancelled') {
                         return $timeout(function() {
                             checkStatus(id)
                         }, 1000)
+                    } else if (resopnse.data.Status == 'Cancelled') {
+                        return $rootScope.loading.searchAuto = false
                     }
 
                     soapApi.orderInfoQuery({id: id}).then(function(resopnse) {
                         $rootScope.loading.searchAuto = false
                         $rootScope.orderSuccess = resopnse.data.OrderInfo
+                        $rootScope.orderSuccess.orderId = id
 
                         var created
                         var supply

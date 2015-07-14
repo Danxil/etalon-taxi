@@ -41,6 +41,12 @@ module.exports = function (app, emailService, soapClient) {
         })
     });
 
+    app.route('/api/order-client-rejection').post(function (req, res) {
+        soapClient.execute('OrderClientRejection', req.body).then(function(response) {
+            res.send(response)
+        })
+    });
+
     app.get('/cabinet', function (req, res) {
         res.render('cabinet');
     });

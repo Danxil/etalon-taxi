@@ -29,6 +29,9 @@ angular.module('app').factory('soapApi', function ($http, $q) {
         },
         orderInfoQuery: function(data) {
             return $http.post('/api/order-info-query', data)
+        },
+        orderClientRejection: function(data) {
+            return $http.post('/api/order-client-rejection', data)
         }
     }
 })

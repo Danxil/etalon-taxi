@@ -38,6 +38,11 @@ module.exports = function(config) {
 
                 break;
             }
+            case 'OrderClientRejection': {
+                request.Id = options.id
+
+                break;
+            }
         }
         console.log(request)
         return JSON.stringify(request)
@@ -65,6 +70,10 @@ module.exports = function(config) {
                 break;
             }
             case 'OrderInfoQuery': {
+
+                break;
+            }
+            case 'OrderClientRejection': {
 
                 break;
             }
