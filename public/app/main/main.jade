@@ -10,7 +10,7 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                     input.order-form__wherefrom-street(placeholder="#{__('namePointPlaceholder')}", type="text", ng-model="application.StreetName", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
                     input.order-form__whereto-house(type="text", ng-model="application.House", placeholder="#{__('numberHouse')}",)
                 div.to-point(data-ng-repeat="item in application.OrderPoints")
-                    .order-form__whereto-title= __('destinationPoint')
+                    .order-form__whereto-title(data-ng-style="{'background-image': $index < application.OrderPoints.length - 1 ? 'url(/static/images/icons/point-c.png)': 'url(/static/images/icons/point-b.png)'}")= __('destinationPoint')
                     .order-form__whereto-inputs
                         input.order-form__whereto-street(placeholder="#{__('namePointPlaceholder')}" type="text", data-ng-init="item.Number = $index + 1" ng-model="item.StreetName", ng-disabled="application.withoutFinalPoint", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
                         input.order-form__whereto-house(type="text", ng-model="item.House", placeholder="#{__('numberHouse')}", ng-disabled="application.withoutFinalPoint")
