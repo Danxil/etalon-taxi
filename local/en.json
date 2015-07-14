@@ -143,5 +143,14 @@
     "outsideKiev": "Outside Kiev",
     "hourly": "Hourly",
     "microbusMinimal": "Microbus minimal",
-    "microbusOutsideKiev": "Microbus outside Kiev"
+    "microbusOutsideKiev": "Microbus outside Kiev",
+	"searchAuto": "Search in cars for the parameters",
+  	"paramtersAuto": "Parameters Your auto",
+  	"auto": "Auto",
+  	"driver_v2": "Driver",
+	"minutes": "Minutes",
+	"seconds": "Seconds",
+	"pendingAutoTime": "Time of auto",
+	"cancel": "Cancel",
+	"thankPageText": "Thank you for order!"
 }

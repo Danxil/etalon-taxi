@@ -6,5 +6,8 @@
   ],
   "description": "EtalonTaxi",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "svg-loaders": "~1.0.2"
+  }
 }

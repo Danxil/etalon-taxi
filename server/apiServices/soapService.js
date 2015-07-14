@@ -23,6 +23,18 @@ module.exports = function(config) {
             case 'AddNewOrder': {
                 request.OrderInfo = options
                 request.OrderInfo.TownName = 'Киев'
+                request.OrderInfo.Parameters = {}
+                request.OrderInfo.Parameters.OrderSoftwareBroadcastImmediately = true
+
+                break;
+            }
+            case 'OrderStatusQuery': {
+                request.Id = options.id
+
+                break;
+            }
+            case 'OrderInfoQuery': {
+                request.Id = options.id
 
                 break;
             }
@@ -45,6 +57,14 @@ module.exports = function(config) {
                 break;
             }
             case 'AddNewOrder': {
+
+                break;
+            }
+            case 'OrderStatusQuery': {
+
+                break;
+            }
+            case 'OrderInfoQuery': {
 
                 break;
             }

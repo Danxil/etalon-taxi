@@ -11,17 +11,30 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
         error: false
     }
 
+    $rootScope.loading = {}
+
+
+    $scope.application = {
+        Client: {},
+        OrderPoints: [
+            {}
+        ],
+        OrderTypes: [],
+        CarClass: 0
+    }
+
+
     $scope.autoTypes = [
         {
-            type: 'standard',
+            type: '0',
             label: 'Стандарт'
         },
         {
-            type: 'business',
+            type: '3',
             label: 'Бизнес'
         },
         {
-            type: 'premium',
+            type: '4',
             label: 'Премиум'
         },
     ]

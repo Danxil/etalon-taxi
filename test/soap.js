@@ -6,7 +6,34 @@ describe('soap', function () {
         soap.createClient(url, function(err, client) {
             var args = {
                 provider: '00000000-0000-0000-0000-000000000115',
+
+
+                request: {
+                    Command: 'OrderInfoQuery',
+                    Id: 40233
+                }
                 /*
+                request: {
+                    Command: 'OrderDriverSelection',
+                    Id: 40205,
+                    DriverId: 1
+                }
+                request: {
+                    Command: 'OrderEstimatedDriversQuery',
+                    Id: 40205
+                }
+
+
+                request: {
+                    Command: 'OrderAutoSearchDrivers',
+                    Id: 40206
+                }
+
+                request: {
+                    Command: 'OrderStatusQuery',
+                    Id: 40206
+                }
+
                 request: {
                     Command: 'RegistersQuery',
                     Requested: [

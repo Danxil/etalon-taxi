@@ -25,16 +25,38 @@ block main-content
                 .text-yellow.h3 (044) 391-3-391
             .contacts-panel__expand-btn(ng-class="{collapse: isExpanded}", ng-click="isExpanded = !isExpanded")
         .auto-class-panel
-            div.choose-auto(data-ng-show="false")
+            div.choose-auto(data-ng-show="!orderSuccess && chooseAutoClassAvailable && !loading.searchAuto")
                 .auto-class-panel__choose= __('selectClassCars')
+                    span {{application.CarClass}}
                 .auto-class-panel__items
-                    .auto-class-panel__item(ng-repeat="(key, value) in autoTypes" ng-class="{active: application.autoClass == value.type}", ng-click="application.autoClass = value.type")
-                        img(data-ng-src="/static/images/auto-{{value.type}}.png")
-                        .auto-class-panel__item-title {{value.label}}
-            div.make-to-tel(data-ng-show="true")
-                //p.title= __('orderThroughTel')
-                p.title= __('testBanner')
-
+                    span(ng-repeat="(key, value) in autoTypes")
+                        input(type="radio" value="{{value.type}}" id="car-choose-head-{{value.type}}" ng-model="application.CarClass" hidden)
+                        label.auto-class-panel__item(for="car-choose-head-{{value.type}}" ng-class="{active: application.CarClass == value.type}")
+                            img(data-ng-src="/static/images/auto-{{value.type}}.png")
+                            .auto-class-panel__item-title {{value.label}}
+            div.make-to-tel(data-ng-show="!orderSuccess && !chooseAutoClassAvailable && !loading.searchAuto")
+                p.title= __('orderThroughTel')
+            div.search-auto(data-ng-show="!orderSuccess && loading.searchAuto")
+                p.title= __('searchAuto')
+                div.svg-loader-wrapper
+                    img.svg-loader(src="/static/images/svg-loaders/puff.svg")
+            div.parameters-auto(data-ng-show="orderSuccess")
+                p.title= __('paramtersAuto')
+                .table
+                    .cell.one
+                        .img-wrapper
+                            img.auto(src="/static/images/car.png")
+                            img.bred(src="/static/images/bred-pit.png")
+                            img.number(src="/static/images/number.png")
+                            span.number-text {{orderSuccess.CarNumber[0] + orderSuccess.CarNumber[1] + ' ' + orderSuccess.CarNumber[2] + orderSuccess.CarNumber[3] + orderSuccess.CarNumber[4] + orderSuccess.CarNumber[5] + ' ' + + orderSuccess.CarNumber[6] + orderSuccess.CarNumber[7]}}
+                    .cell.two
+                        ul.order-info
+                            li.item
+                                span.info-label= __('auto') + ': '
+                                span.info-value {{orderSuccess.CarmakerModel}}
+                            li.item
+                                span.info-label= __('driver_v2')+ ': '
+                                span.info-value {{orderSuccess.DriverName}}
     .sidebar
         a.sidebar__order-btn(href="/#{__('locale')}")= __('orderTaxi')
         .sidenav

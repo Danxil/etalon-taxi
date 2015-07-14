@@ -213,6 +213,12 @@ button
       font-size: 25px;
       padding-top 57px
 
+  .search-auto
+    .title
+      color: #fff
+      text-align center
+      font-size 14pt
+
 .auto-class-panel__choose
   @extend .h4
   @extend .text-white
@@ -227,9 +233,13 @@ button
   @extend .text-center
   display: inline-block
   cursor: pointer
-  margin-right: 20px
   margin-top: 0
   position relative
+  width auto !important
+  height auto !important
+  background transparent !important
+  margin 0 20px 0 0 !important
+  box-shadow none !important
 
   &:before
     background-size: contain;
@@ -490,7 +500,6 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .order-form__cost-title
   @extend .h4
-  icon-bg('/static/images/icons/black/cabinet.png');
   display: inline-block
 
 .order-form__cost-after
@@ -517,6 +526,7 @@ for flagname in 'ru' 'ua' 'gb' {
 .order-form__counter-text
   @extend .h4
   display: inline-block
+  vertical-align bottom
 
 .order-form__corporate, .order-form__have-a-card
   @extend .h6
@@ -738,3 +748,97 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .h1
   text-transform uppercase
+
+.svg-loader-wrapper
+  text-align center
+  padding 30px 0
+
+  .svg-loader
+    height 100px
+
+.loader-overlay
+  background rgba(hotyellow, 0.5)
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  z-index 100
+
+.parameters-auto
+  padding 0 60px
+
+  .title
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+
+  .table
+    font-size 0
+
+    .cell
+      display table-cell
+      width 50%
+      vertical-align top
+
+      .img-wrapper
+        position relative
+
+      img
+        &.auto
+          width: 200px;
+
+        &.bred
+          width: 85px;
+          position: absolute;
+          top: -5px;
+          right: 66px;
+
+        &.number
+          width: 200px;
+
+      .number-text
+        position absolute
+        bottom: 0px;
+        left: 29px;
+        font-size 22pt
+
+      .order-info
+        .item
+          margin-top 20px
+
+          &:first-child
+            margin-top 0
+
+          .info-label,
+          .info-value
+            font-size 14pt
+            color: #fff
+
+          .info-value
+            color: yellow
+
+.order-result
+  margin-top 20px
+
+  .two-dotted
+    margin-right 10px
+    font-size 35pt
+
+.points-labels
+  font-size 14pt
+
+  > span
+    width 100px
+
+  .minutes
+    display inline-block
+    text-align center
+
+  .seconds
+    margin-left 35px
+    display inline-block
+    text-align center
+
+.thank-title
+  font-size: 65pt

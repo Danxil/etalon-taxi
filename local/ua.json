@@ -143,5 +143,14 @@
     "outsideKiev": "Загородній",
     "hourly": "Погодинний",
     "microbusMinimal": "Мікроавтобус мінімальний",
-    "microbusOutsideKiev": "Мікроавтобус заміський"
+    "microbusOutsideKiev": "Мікроавтобус заміський",
+	"searchAuto": "Йде пошук авто за Вашими параметрами",
+	"paramtersAuto": "Параметри Вашого авто",
+	"auto": "Авто",
+	"driver_v2": "Водій",
+	"minutes": "Хвилини",
+	"seconds": "Секунды",
+	"pendingAutoTime": "Час подачі авто",
+	"cancel": "Скасувати",
+	"thankPageText": "Спасибі за ваше замовлення!"
 }

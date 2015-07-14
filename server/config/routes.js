@@ -24,6 +24,19 @@ module.exports = function (app, emailService, soapClient) {
 
     app.route('/api/add-new-order').post(function (req, res) {
         soapClient.execute('AddNewOrder', req.body).then(function(response) {
+            console.log(response)
+            res.send(response)
+        })
+    });
+
+    app.route('/api/order-status-query').post(function (req, res) {
+        soapClient.execute('OrderStatusQuery', req.body).then(function(response) {
+            res.send(response)
+        })
+    });
+
+    app.route('/api/order-info-query').post(function (req, res) {
+        soapClient.execute('OrderInfoQuery', req.body).then(function(response) {
             res.send(response)
         })
     });

@@ -17,12 +17,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/:lang', {
             templateUrl: '/partials/main/main',
-            controller: 'etMainCtrl',
-            resolve: {
-                regions: function($q, soapApi) {
-                    return soapApi.getPlaces()
-                }
-            }
+            controller: 'etMainCtrl'
         })
         .when('/:lang/contacts', {templateUrl: '/partials/contacts/contacts', controller: 'etContactsCtrl'})
         .when('/:lang/for-companies', {templateUrl: '/partials/for-companies/for-companies', controller: 'etForCompaniesCtrl'})
