@@ -76,8 +76,11 @@ angular.module('app').controller('etGlobalCtrl', function ($scope, $rootScope, $
 
 
     $scope.order = function () {
-        if (!$scope.toShowNumber || !$scope.application.Client.Phone)
+        if (!$scope.toShowNumber || !$scope.application.Client.Phone) {
+            $scope.enterPhoneHighlight = true
+
             return
+        }
 
         $rootScope.loading.searchAuto = true
 

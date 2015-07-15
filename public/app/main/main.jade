@@ -79,7 +79,7 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                             //    label(for="additionalRequirements_driver")= __('driver')
                 .order-form-phone-title(ng-show="toShowNumber") Ваш номер телефона
                 .order-form__phone-container
-                    input.order-form__phone(type="text", ng-model="application.Client.Phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber")
+                    input.order-form__phone(data-scroll-to="enterPhoneHighlight" type="text" data-ng-style="enterPhoneHighlight && {'border-color': 'red'}" ng-model="application.Client.Phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber")
         .order-form__right-side
             .order-form__cost-title= __('tripCost')
             .order-form__cost-after(ng-show="application.withoutFinalPoint")= __('costAfterTrip')
