@@ -1,0 +1,15 @@
+ui-gmap-google-map.map(center="map.center", zoom="16")
+.order-form
+    div
+        div.section.login
+            .section-title.text-center= __('loginTitle')
+            .order-form__left-side-inner
+                .section-label= __('login')
+                .order-form__wherefrom-inputs
+                    input.input(type="text", ng-model="authorisation.login")
+                .section-label= __('password')
+                .order-form__whereto-inputs
+                    input.input(type="password" ng-model="authorisation.password")
+                .section-label.text-center(data-ng-show="authorisation.error")= __('errorAuthorisation')
+                .order-form__additional-requirements
+                    button.order-form__additional-requirements-button(ng-click="submit()")= __('enter')

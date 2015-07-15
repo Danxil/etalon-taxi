@@ -77,7 +77,8 @@ button
   @extend .bold
   @extend .text-center
   @extend .text-white
-  margin-top: 140px
+  //margin-top: 140px
+  margin-top: 200px
   letter-spacing 7pt
 
 //-----CONTACTS-----
@@ -596,9 +597,12 @@ for flagname in 'ru' 'ua' 'gb' {
   padding 50px
 
 .they-trust__imgs
-  margin-top: 60px
+  margin-top 70px
+
 .they-trust__img
   margin-left: 60px
+  max-width: 180px;
+  max-height: 100px;
 
 //-----AWARDS-----
 .awards
@@ -617,11 +621,11 @@ for flagname in 'ru' 'ua' 'gb' {
   @extend .h5
   @extend .text-center
   display: inline-block
-  width: 200px
+  width: 33%
   float: left
 
 .awards__item-img
-  width: 115px
+  width: 180px
   margin: 0 auto
   display: block
 
@@ -742,10 +746,14 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .svg-loader-wrapper
   text-align center
-  padding 30px 0
+  padding 0 0 30px
 
   .svg-loader
-    height 100px
+    height 50px
+
+.svg-loader-wrapper + .order-form__order-btn
+  margin 0 auto
+  display block
 
 .loader-overlay
   background rgba(hotyellow, 0.5)
@@ -833,3 +841,19 @@ for flagname in 'ru' 'ua' 'gb' {
 
 .thank-title
   font-size: 65pt
+
+.login
+  .section-label
+    text-align left
+
+  .order-form__additional-requirements-button
+    &:after
+      display none
+
+
+.input
+  padding: 12px 25px;
+  border: 1px solid #fdc43b;
+  border-radius: 3px;
+  width: 100%;
+  font-size: 11pt !important;

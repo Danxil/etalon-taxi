@@ -1,4 +1,11 @@
-module.exports = function (app, emailService, soapClient) {
+module.exports = function (app, emailService, soapClient, passport) {
+    var checkUser = passport.authenticate('local')
+
+    var ensureAuthenticated = function (req, res, next) {
+        if (req.isAuthenticated()) { return next(); }
+        next(new Error('No authenticated'));
+    }
+
     app.route('/api/backCall').post(function (req, res) {
         if (!req.body.phoneNumber)
             return res.send(400);
@@ -47,7 +54,19 @@ module.exports = function (app, emailService, soapClient) {
         })
     });
 
-    app.get('/cabinet', function (req, res) {
+    app.post('/api/login', checkUser, function(req, res) {
+        res.send(200)
+    });
+
+    app.get('/api/login', function (req, res) {
+        if (req.user)
+            res.send(req.user)
+        else
+            res.send(401)
+    })
+
+
+    app.get('/cabinet', ensureAuthenticated, function (req, res) {
         res.render('cabinet');
     });
 

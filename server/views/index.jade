@@ -2,7 +2,7 @@ extends ../includes/layout
 
 block main-content
     .header
-        a.login-link.yellow-link(href="/cabinet" target="_self")= __('menuCabinet')
+        //a.login-link.yellow-link(data-ng-href="{{userData ? '/cabinet' : '/#{__('locale')}/login'}}" target="_self")= __('menuCabinet')
         a.logo(href="/#{__('locale')}")
         .header-title= __('onlineOrder')
         .contacts-panel
@@ -22,7 +22,7 @@ block main-content
             p.h5.text-white= __('allContacts')
             .contacts-panel__additional-numbers(ng-class="{expanded: isExpanded}")
                 .text-yellow.h3 (067) 463-54-54
-                .text-yellow.h3 (063) 237-54-54
+                .text-yellow.h3 (050) 340-54-54
             .contacts-panel__expand-btn(ng-class="{collapse: isExpanded}", ng-click="isExpanded = !isExpanded")
         .auto-class-panel
             div.choose-auto(data-ng-show="!orderSuccess && chooseAutoClassAvailable && !loading.searchAuto")
@@ -40,6 +40,7 @@ block main-content
                 p.title= __('searchAuto')
                 div.svg-loader-wrapper
                     img.svg-loader(src="/static/images/svg-loaders/puff.svg")
+                button.order-form__order-btn(ng-click="cancelOrder()")= __('cancel')
             div.parameters-auto(data-ng-show="orderSuccess")
                 p.title= __('paramtersAuto')
                 .table

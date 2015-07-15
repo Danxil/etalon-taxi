@@ -22,7 +22,7 @@ module.exports = {
         emailHost: 'smtp.mandrillapp.com',
         emailPort: '587',
         fromEmail: 'eriendel97@gmail.com',
-        managerEmail: 'igor@likefor.org',
+        managerEmail: 'taxi@etalontaxi.com.ua',
         soapUrl: 'http://taxi.intelserv.com/YTaxiSOAP/YTxWebService.asmx?WSDL',
         soapProvider: '00000000-0000-0000-0000-000000000115'
     }

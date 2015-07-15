@@ -2,9 +2,14 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
 .order-form
     div
         .order-form__left-side
-            .order-form__left-side-inner(data-ng-show="orderSuccess")
+            .order-form__left-side-inner(data-ng-show="orderStatus == 'sorry'")
+                h1.thank-title= __('sorryOrderText')
+            .order-form__left-side-inner(data-ng-show="orderStatus == 'canceled'")
+                h1.thank-title= __('canceledOrderText')
+            span {{angular.isObject(orderSuccess)}}
+            .order-form__left-side-inner(data-ng-show="orderStatus == 'success'")
                 h1.thank-title= __('thankPageText')
-            .order-form__left-side-inner(data-ng-show="!orderSuccess")
+            .order-form__left-side-inner(data-ng-hide="orderStatus")
                 .order-form__wherefrom-title= __('whereSubmitCar')
                 .order-form__wherefrom-inputs
                     input.order-form__wherefrom-street(placeholder="#{__('namePointPlaceholder')}", type="text", ng-model="application.StreetName", typeahead="state for state in regions | filter:$viewValue | limitTo:8")
@@ -23,9 +28,9 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                     .order-form__additional-requirements-list(ng-class="{expanded: additionalRequirementsExpanded}")
                         .col-md-6
                             .order-form__additional-requirements-side-title= __('driverAndCar')
-                            .order-form__additional-requrement
-                                input(type="checkbox", id="additionalRequirements_exp10", ng-model="add1")
-                                label(for="additionalRequirements_exp10")= __('experience10')
+                            //.order-form__additional-requrement
+                            //    input(type="checkbox", id="additionalRequirements_exp10", ng-model="add1")
+                            //    label(for="additionalRequirements_exp10")= __('experience10')
                             .order-form__additional-requrement
                                 input(type="checkbox", id="additionalRequirements_eng", ng-model="add2" ng-change="toggleOrderType(15)")
                                 label(for="additionalRequirements_eng")= __('speakEnglish')
@@ -69,9 +74,9 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                             .order-form__additional-requrement
                                 input(type="checkbox", id="additionalRequirements_courier", ng-model="add7" ng-change="toggleOrderType(7)")
                                 label(for="additionalRequirements_courier")= __('courier')
-                            .order-form__additional-requrement
-                                input(type="checkbox", id="additionalRequirements_driver", ng-model="add7" ng-change="toggleOrderType(3)")
-                                label(for="additionalRequirements_driver")= __('driver')
+                            //.order-form__additional-requrement
+                            //    input(type="checkbox", id="additionalRequirements_driver", ng-model="add7" ng-change="toggleOrderType(3)")
+                            //    label(for="additionalRequirements_driver")= __('driver')
                 .order-form-phone-title(ng-show="toShowNumber") Ваш номер телефона
                 .order-form__phone-container
                     input.order-form__phone(type="text", ng-model="application.Client.Phone", placeholder="введите Ваш контактный телефон", ng-show="toShowNumber")
@@ -94,9 +99,9 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                         label(for="isVoucher") #{__('voucher')}, #{__('lastName')}
                         div.order-form__corporate(ng-show="isVoucher")
                             div.order-form__corporate
-                                input(type="text", placeholder="#{__('voucher')}").order-form__card-code
+                                input(type="text" data-ng-model="application.NonCashTicketNum" placeholder="#{__('voucher')}").order-form__card-code
                             div.order-form__corporate
-                                input(type="text", placeholder="#{__('lastName')}").order-form__card-code
+                                input(type="text", data-ng-model="application.Passenger" placeholder="#{__('lastName')}").order-form__card-code
                 .order-form__have-a-card(ng-show="!isCorporate")
                     input(type="checkbox", id="haveACard", ng-model="haveACard")
                     label(for="haveACard") #{__('saleCard')}
@@ -114,7 +119,7 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
                     .order-form__counter-digit {{orderSuccess.PlannedPending[1]}}
                     span.two-dotted :
                     .order-form__counter-digit {{((orderSuccess.PlannedPending[3] + orderSuccess.PlannedPending[4]) * 60 / 100).toString()[0]}}
-                    .order-form__counter-digit {{((orderSuccess.PlannedPending[3] + orderSuccess.PlannedPending[4]) * 60 / 100).toString()[1]}}
+                    .order-form__counter-digit 0
                 .points-labels
                     span.minutes= __('minutes')
                     span.seconds= __('seconds')
@@ -139,23 +144,19 @@ ui-gmap-google-map.map(center="map.center", zoom="16")
 .they-trust
     .h1.light= __('trustUs')
     .they-trust__imgs
-        img.they-trust__img(src="/static/images/kyivstar.png")
-        img.they-trust__img(src="/static/images/mts.png")
-        img.they-trust__img(src="/static/images/kyivstar.png")
-        img.they-trust__img(src="/static/images/mts.png")
+        img.they-trust__img(src="/static/images/trust-1.png")
+        img.they-trust__img(src="/static/images/trust-2.png")
+        img.they-trust__img(src="/static/images/trust-3.png")
+        img.they-trust__img(src="/static/images/trust-4.png")
 .awards
     .h1.light= __('honors')
     .awards__items
         .awards__item
-            img.awards__item-img(src="/static/images/brend_roku.png")
-            .awards__item-title !{__("brend2012")}
+            img.awards__item-img(src="/static/images/reward-1.jpg")
+            .awards__item-title !{__("brend2009")}
         .awards__item
-            img.awards__item-img(src="/static/images/brend_roku.png")
-            .awards__item-title !{__("transportOlimp")}
+            img.awards__item-img(src="/static/images/reward-2.jpg")
+            .awards__item-title !{__("higherQa")}
         .awards__item
-            img.awards__item-img(src="/static/images/brend_roku.png")
-            .awards__item-title !{__("goldenFortune")}
-        .awards__item
-            img.awards__item-img(src="/static/images/brend_roku.png")
-            .awards__item-title
-                a.black-link-underline !{__("higherTest")}
+            img.awards__item-img(src="/static/images/reward-3.jpg")
+            .awards__item-title !{__("higherTest")}

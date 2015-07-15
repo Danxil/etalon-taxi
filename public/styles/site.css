@@ -327,7 +327,7 @@ button {
   top: 70px;
 }
 .header-title {
-  margin-top: 140px;
+  margin-top: 200px;
   letter-spacing: 7pt;
 }
 .contacts-panel {
@@ -921,10 +921,12 @@ button {
   padding: 50px;
 }
 .they-trust__imgs {
-  margin-top: 60px;
+  margin-top: 70px;
 }
 .they-trust__img {
   margin-left: 60px;
+  max-width: 180px;
+  max-height: 100px;
 }
 .awards {
   padding: 50px;
@@ -940,11 +942,11 @@ button {
 }
 .awards__item {
   display: inline-block;
-  width: 200px;
+  width: 33%;
   float: left;
 }
 .awards__item-img {
-  width: 115px;
+  width: 180px;
   margin: 0 auto;
   display: block;
 }
@@ -1068,10 +1070,14 @@ button {
 }
 .svg-loader-wrapper {
   text-align: center;
-  padding: 30px 0;
+  padding: 0 0 30px;
 }
 .svg-loader-wrapper .svg-loader {
-  height: 100px;
+  height: 50px;
+}
+.svg-loader-wrapper + .order-form__order-btn {
+  margin: 0 auto;
+  display: block;
 }
 .loader-overlay {
   background: rgba(253,214,2,0.5);
@@ -1157,4 +1163,17 @@ button {
 }
 .thank-title {
   font-size: 65pt;
+}
+.login .section-label {
+  text-align: left;
+}
+.login .order-form__additional-requirements-button:after {
+  display: none;
+}
+.input {
+  padding: 12px 25px;
+  border: 1px solid #fdc43b;
+  border-radius: 3px;
+  width: 100%;
+  font-size: 11pt !important;
 }
